@@ -84,7 +84,7 @@ header p{margin:0;color:var(--muted);max-width:72ch}
 /* ---------- Pantalla del robot (escala con el ancho) ---------- */
 .scr{--s-bg:#eceff4;--s-card:#ffffff;--s-ink:#1c2230;--s-mut:#808a9c;--s-line:#e2e6ee;--s-blue:#2a6af6;--s-blue2:#5590ff;--s-soft:#e7efff;--s-red:#ef3f4a;--s-green:#1fae58;--s-amber:#e9a114;--s-inp:#f3f5f9;
   position:absolute;inset:0;display:flex;flex-direction:column;background:var(--s-bg);color:var(--s-ink);font-family:var(--f-body);font-size:max(8.5px,2.15cqw);line-height:1.3;color-scheme:light}
-.scr.dark{--s-bg:#15181e;--s-card:#21252d;--s-ink:#e7eaf0;--s-mut:#8f98a8;--s-line:#30353f;--s-soft:#1f3258;--s-inp:#2a2f38;color-scheme:dark}
+.scr.dark{--s-bg:#1c2433;--s-card:#2a3446;--s-ink:#eef2f8;--s-mut:#9aa7ba;--s-line:#38445a;--s-soft:#1d3a5c;--s-inp:#323e53;--s-blue:#1d9bf0;--s-blue2:#38d1ff;color-scheme:dark}
 .sb{display:flex;justify-content:space-between;align-items:center;padding:.35em 1.1em .2em;font-size:.78em;color:var(--s-mut);gap:1em;min-height:1.9em}
 .sb .r{display:flex;gap:.9em;align-items:center;white-space:nowrap}
 .sb svg{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -459,6 +459,174 @@ body{padding-block:12px;margin:0}
 .pushrow .hpad [data-hd]{grid-column:auto;grid-row:auto}
 .pushrow .handle small{display:block;max-width:150px}
 @media (max-width:1300px){.pushrow .handle small{display:none}}
+
+/* ---------- v3: pantallas según las fotos del robot de clase ---------- */
+.it.rad{cursor:pointer}
+.it.rad .rb,.thc .rb{width:1.05em;height:1.05em;border-radius:50%;border:2px solid var(--s-mut);flex:none}
+.it.rad.on .rb,.thc.on .rb{border:.32em solid var(--s-blue)}
+.it.sub2{background:var(--s-inp);justify-content:flex-end;flex-wrap:wrap}
+.it .num{width:4.5em}
+.exp{border:none;background:none;color:var(--s-mut);font-size:.82em;padding:.2em .4em}
+.hab{color:#22d3a6}
+.seg2{display:inline-grid;grid-template-columns:1fr 1fr;gap:.3em;flex:1;min-width:12em}
+.seg2 button{border:none;border-radius:.4em;padding:.45em .6em;background:var(--s-card);color:var(--s-mut);font-size:.85em}
+.seg2 button.on{background:var(--s-soft);color:var(--s-blue);font-weight:600}
+.phb{display:flex;flex-direction:column;gap:.35em;padding:.5em .8em;border-top:1px solid var(--s-line)}
+.phb .row{background:var(--s-inp)}
+.chk{border:none;background:none;color:var(--s-mut);font-size:.88em;padding:.2em .3em}
+.chk.on{color:#22d3a6}
+.xx.play,.it .play{color:#22d3a6}
+.it .play{border:1.5px solid #22d3a6;background:none;border-radius:50%;width:1.7em;height:1.7em;font-size:.75em;display:flex;align-items:center;justify-content:center}
+.btn.sm{padding:.35em .8em;font-size:.8em}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:.6em;flex:none}
+.thc{border:2px solid transparent;background:var(--s-card);border-radius:.7em;padding:.5em;display:flex;flex-direction:column;gap:.4em;color:var(--s-ink);text-align:left}
+.thc.on{border-color:var(--s-blue)}
+.rbw{display:flex;align-items:center;gap:.5em;font-size:.9em}
+.thp{display:grid;grid-template-columns:repeat(3,1fr);gap:.25em;padding:.4em;border-radius:.4em}
+.thp i{font-style:normal;font-size:.6em;text-align:center;border-radius:.2em;padding:.15em 0}
+.thp.light{background:#f4f6fa}.thp.light i{background:#fff;color:#8a94a6}
+.thp.dark{background:#1c2433}.thp.dark i{background:#2a3a5c;color:#cfe2ff}
+.qrs{display:flex;justify-content:center;gap:2em;padding:.8em}
+.qrs figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:.3em;font-size:.78em;color:var(--s-mut)}
+.qrs .qr{width:6em;height:6em}
+/* Lista de mapas */
+.mlh{display:flex;align-items:center;gap:.6em}
+.mlh b{font-size:1.05em}
+.mlg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7em;overflow:auto;align-content:start;padding:.1em}
+.mlc{position:relative;background:var(--s-card);border-radius:.8em;padding:.5em;display:flex;flex-direction:column;gap:.35em;border:2px solid transparent}
+.mlc.on{border-color:var(--s-blue)}
+.mlc canvas{width:100%;height:auto;border-radius:.4em;image-rendering:pixelated;background:#d4d9e1}
+.mlr{display:flex;align-items:center;justify-content:space-between;gap:.5em;font-size:.9em}
+.mln{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mlu{color:var(--s-blue);font-size:.8em;font-weight:600;white-space:nowrap}
+.mla{display:flex;justify-content:flex-end;gap:.4em}
+.mlb{border:none;background:var(--s-inp);border-radius:.4em;width:2.2em;height:1.7em;color:var(--s-ink)}
+.mlm{position:absolute;right:.5em;bottom:2.6em;background:var(--s-card);box-shadow:0 .3em 1em rgba(0,0,0,.2);border-radius:.5em;display:flex;flex-direction:column;padding:.25em;z-index:3}
+.mlm button{border:none;background:none;text-align:left;padding:.45em .8em;font-size:.85em;color:var(--s-ink);border-radius:.3em}
+.mlm button.del{color:var(--s-red)}
+.mlm button:disabled{opacity:.4}
+
+/* asistente de nuevo mapa */
+.wz{flex:1;display:flex;flex-direction:column;gap:.7em;min-height:0;overflow:auto}
+.wzh{display:flex;align-items:center;gap:.6em}.wzh b{font-size:1.05em}
+.wzc2{display:grid;grid-template-columns:1fr 1fr;gap:.8em}
+.wzg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6em}
+.wzo{position:relative;border:2px solid var(--s-line);background:var(--s-card);border-radius:.8em;padding:1em .9em .9em 2.6em;text-align:left;display:flex;flex-direction:column;gap:.35em;color:var(--s-ink)}
+.wzo.sm{padding:.7em .7em .7em 2.3em;font-size:.88em}
+.wzo .rb{position:absolute;left:.8em;top:1em;width:1.05em;height:1.05em;border-radius:50%;border:2px solid var(--s-mut)}
+.wzo.on{border-color:var(--s-blue);background:var(--s-soft)}.wzo.on .rb{border:.32em solid var(--s-blue)}
+.wzo small{color:var(--s-mut);font-size:.82em;line-height:1.35}
+.wzn{color:var(--s-mut)}
+.wzf{margin-top:auto;display:flex;justify-content:flex-end}
+.wzf .btn{padding:.6em 1.8em}
+.wzbox{background:var(--s-card);border-radius:.7em;padding:.9em;display:flex;flex-direction:column;gap:.5em}
+.wzin{border:1px solid var(--s-line);background:var(--s-inp);border-radius:.5em;padding:.7em;text-align:left;color:var(--s-ink);font-size:.95em}
+.ph2{color:var(--s-mut)}
+.wzban{background:#fff4e5;color:#9a5b00;border-radius:.5em;padding:.5em .8em;font-size:.85em;display:flex;justify-content:space-between;gap:1em;align-items:center}
+.lnk{border:none;background:none;color:var(--s-blue);font-size:.9em;padding:.2em .3em;white-space:nowrap}
+.wztip{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4em;padding:0 2em}
+.wzill{font-size:3em;width:1.8em;height:1.8em;border-radius:50%;background:var(--s-soft);display:flex;align-items:center;justify-content:center}
+.wztip p{margin:0;color:var(--s-mut);max-width:30em;font-size:.92em}
+.dots{display:flex;justify-content:center;gap:.4em}
+.dots button{width:.55em;height:.55em;border-radius:.3em;border:none;background:var(--s-line);padding:0}
+.dots button.on{width:1.4em;background:var(--s-blue)}
+/* herramienta de mapeo según las fotos */
+.mt-red{position:absolute;top:.55em;left:3.3em;right:.6em;background:#fff;color:#e5484d;border-radius:.5em;padding:.4em .8em;font-size:.8em;box-shadow:0 .2em .6em rgba(0,0,0,.1);z-index:2}
+.mtw.loop .mt-red{top:3.2em;left:.6em}
+.mt-side{position:absolute;right:.6em;top:3em;display:flex;flex-direction:column;gap:.4em;z-index:2}
+.mt-side.up{top:5.6em}
+.mt-ic{width:2.2em;height:2.2em;border-radius:50%;border:none;background:#fff;box-shadow:0 .15em .4em rgba(0,0,0,.15);font-size:.9em}
+.mt-scale{position:absolute;left:.7em;bottom:3.9em;font-size:.7em;color:#6b7685;border-bottom:2px solid #6b7685;padding:0 1.2em .1em;z-index:2}
+.mt-bar{position:absolute;left:0;right:0;bottom:0;background:#fff;display:flex;align-items:center;gap:.5em;padding:.45em .6em;z-index:2;box-shadow:0 -.15em .5em rgba(0,0,0,.08)}
+.mt-bar.c{justify-content:center;background:transparent;box-shadow:none}
+.mt-bar .btn{padding:.5em 1em;font-size:.86em}
+.btn.red{background:#e5484d;color:#fff}
+.btn.txt{background:none;padding-left:.3em}.btn.txt.red{color:#e5484d}
+.tgl{border:none;background:none;display:flex;align-items:center;gap:.4em;font-size:.84em;color:#2b3340}
+.tgl .sw2{pointer-events:none}
+.mtw .mt-dpad{bottom:3.6em}
+.mtw .mt-dpad.up{bottom:3.6em}
+.mt-tools{position:absolute;left:3.3em;top:.5em;border:none;background:#fff;border-radius:.5em;padding:.5em .9em;font-size:.84em;box-shadow:0 .2em .6em rgba(0,0,0,.1);z-index:2;color:#2b3340}
+.mt-tools.on{background:var(--s-blue);color:#fff}
+.mt-panel.left{left:.5em}
+.mt-checks{top:.5em!important;right:.6em!important;bottom:auto!important}
+.mt-top{position:absolute;left:.5em;right:.5em;top:.45em;display:flex;align-items:center;gap:.6em;z-index:2}
+.mt-top .lnk{background:#fff;border-radius:.4em;padding:.35em .6em;box-shadow:0 .15em .4em rgba(0,0,0,.1)}
+.mt-steps{flex:1;display:flex;align-items:center;justify-content:center;gap:.3em;background:#fff;border-radius:.5em;padding:.35em .5em;font-size:.68em;color:#8a94a6;box-shadow:0 .15em .4em rgba(0,0,0,.1);flex-wrap:wrap}
+.mt-steps span{display:flex;align-items:center;gap:.3em;white-space:nowrap}
+.mt-steps i{font-style:normal;width:1.5em;height:1.5em;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:.85em}
+.mt-steps .cur{color:#1d7bf0;font-weight:600}.mt-steps .done{color:#1fae58}
+.mt-steps em{font-style:normal;color:#c2c9d4}
+.mt-wait{position:absolute;inset:3em 0 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6em;background:rgba(255,255,255,.55);z-index:2;color:#2b3340}
+
+/* editor de crucero y pausa */
+.ceh{display:flex;align-items:center;gap:.6em}
+.cen{flex:1;border:none;background:none;font-weight:600;font-size:1.02em;color:var(--s-ink)}
+.ceb{display:grid;grid-template-columns:1.2fr 1fr;gap:.7em;min-height:0}
+.cel{display:flex;flex-direction:column;gap:.5em;padding:.6em}
+.cel .pv{display:flex;align-items:center;justify-content:center;min-height:0}
+.cel .pv svg{width:100%;height:100%}
+.cem{border:none;background:var(--s-inp);border-radius:.5em;padding:.5em .8em;text-align:left;color:var(--s-ink);font-size:.86em}
+.cer{display:flex;flex-direction:column;gap:.4em;padding:.6em;overflow:auto}
+.cel2{display:flex;flex-direction:column;gap:.3em}
+.cerow{display:flex;align-items:center;gap:.5em;background:var(--s-inp);border-radius:.5em;padding:.35em .5em;font-size:.88em}
+.cerow .t{flex:1}
+.crx{width:1.4em;height:1.4em;border-radius:50%;border:none;background:#ef3f4a;color:#fff;font-weight:700;line-height:1;padding:0}
+.cadd{border:1.5px dashed var(--s-line);background:none;border-radius:.5em;padding:.45em;color:var(--s-blue);font-size:.86em}
+/* historial */
+.thh{display:flex;justify-content:space-between;align-items:center}
+.th{padding:0!important;gap:0!important}
+.thr{display:grid;grid-template-columns:1fr 2fr 1fr 1fr;gap:.5em;padding:.5em .8em;border-bottom:1px solid var(--s-line);font-size:.86em;align-items:center}
+.thr small{display:block;color:var(--s-mut);font-size:.85em}
+.thc0{color:var(--s-mut);font-size:.78em;position:sticky;top:0;background:var(--s-card)}
+.thd{padding:.45em .8em;font-weight:600;font-size:.82em;background:var(--s-inp)}
+.scr .side{gap:.1em;height:auto;padding-right:0}
+.scr .side .si{padding-top:.42em;padding-bottom:.42em}
+.cel .pv svg{height:auto;max-height:9em}
+
+/* inicio como la foto del robot de clase */
+.home{grid-template-columns:30% 1fr}
+.rcard{background:var(--s-card);border-radius:1em;padding:.7em .4em .4em;gap:.3em}
+.rcard .hi{border:none;background:linear-gradient(90deg,#5fd6e8,#7fc4f4);color:#fff;font-weight:700;border-radius:.4em;padding:.15em 1.1em;font-size:.85em;cursor:pointer}
+.rspin{border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rspin svg{height:100%;width:100%}
+
+@keyframes rspin{0%{transform:scaleX(1)}48%{transform:scaleX(.04)}52%{transform:scaleX(.04)}100%{transform:scaleX(1)}}
+.rcard .pw{right:.5em;bottom:.4em;color:var(--s-blue)}
+.modes{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));grid-auto-rows:auto;padding-top:0;gap:.6em}
+.mode{background:var(--s-card);gap:.7em;font-size:1.02em}
+.mode.tall{grid-row:span 2;grid-column:3}
+.mode.lowk .mi{filter:saturate(.5);opacity:.7}
+.mode .mi{width:3.1em;height:3.1em;border-radius:.7em}
+.mode .mi svg{width:1.8em;height:1.8em}
+.mi.g-vda{background:linear-gradient(160deg,#c9eef0,#7cc7c9)}.mi.g-vda svg{stroke:#2a7d80}
+.mi.g-del{background:linear-gradient(160deg,#c8f08c,#4cc35a)}
+.mi.g-cru{background:linear-gradient(160deg,#ffb08a,#ef4b5f)}
+.mi.g-lift{background:linear-gradient(160deg,#a9d4ff,#4b8fe8)}
+.mi.g-fol{background:linear-gradient(160deg,#8fb8ff,#2a6af6)}
+.hbar .hb .hl{display:inline!important}
+/* asistente como en las fotos: título centrado, opciones apiladas, «Siguiente» centrado */
+.wzh{position:relative;justify-content:center;min-height:2.4em}.wzh .backb{position:absolute;left:0}.wzh b{font-size:1.3em;font-weight:500}
+.wzc2{grid-template-columns:1fr;gap:.6em;max-width:36em;width:100%;margin:0 auto}
+.wzc2 .wzo{align-items:center;text-align:center;padding:.8em 2.6em}
+.wzc2 .wzo.on{color:var(--s-blue)}.wzc2 .wzo.on small{color:var(--s-blue)}
+.wzn{text-align:center}
+.wzf{justify-content:center}.wzf .btn{padding:.65em 3em;font-size:1.05em}
+.wzbox{max-width:40em;width:100%;margin:0 auto;background:none;padding:0}
+.wzbox .small{display:none}
+.wzin{background:#fff;border-color:#e2e6ec;padding:.9em}
+.it.newmap .t{color:var(--s-blue)}
+/* flechas: avanzar/atrás distintas de girar */
+.dpad button{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;gap:.1em}
+.dpad button i{font-style:normal;font-size:.45em;opacity:.8}
+.dpad button.turn{border-radius:50%;background:#fff4e0;color:#b86a00;font-size:1.35em}
+.dpad button.turn i{font-size:.38em}
+.dpad button.turn.act{background:#f59e0b;color:#fff}
+.dpad .c{opacity:0}
+.hpad button.turn{background:#fff4e0;color:#b86a00;border-color:#f3c77a;border-radius:16px}
+.hpad button.turn.act{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.pushrow .hpad{grid-template-columns:repeat(4,auto)}
+.pushrow .hpad button{padding:0 9px;font-size:13px;white-space:nowrap}
 </style>
 
 <div class="app">
@@ -470,7 +638,7 @@ body{padding-block:12px;margin:0}
     </section>
     <div class="pushrow"><span class="hintbar" id="hint"></span><button class="o hand" id="handBtn" hidden>✋ Levantar la mano</button>
       <div class="handle" id="handlePad" hidden><span class="lab">Asa</span>
-        <div class="hpad"><button data-hd="l" aria-label="Girar a la izquierda">◀</button><button data-hd="f" aria-label="Empujar hacia delante">▲</button><button data-hd="b" aria-label="Tirar hacia atrás">▼</button><button data-hd="r" aria-label="Girar a la derecha">▶</button></div>
+        <div class="hpad"><button data-hd="l" class="turn" aria-label="Girar a la izquierda">↺ girar</button><button data-hd="f" aria-label="Avanzar">▲ avanzar</button><button data-hd="b" aria-label="Retroceder">▼ atrás</button><button data-hd="r" class="turn" aria-label="Girar a la derecha">girar ↻</button></div>
         <small id="handleTxt"></small></div>
     </div>
     <section class="device" aria-label="Pantalla del robot">
@@ -557,12 +725,16 @@ let obstacles=[];
 let racks=[{x:4.5,y:9.6,carried:false},{x:12.6,y:6.6,carried:false}];
 let person=null;
 const truth=new Uint8Array(GW*GH);
+/* Mapa real del robot de clase (Pudu Installer, «0#0#gonvicire.pdmap»), convertido a celdas de 10 cm.
+   grid = lo que el robot tiene en su mapa; truth = paredes y muebles del aula para el LiDAR simulado. */
+const AULA_DATA={"id": "aula1", "name": "gonvicire (aula)", "world": "aula", "grid": "02g,22,0h,211,03g,2f,03,2n,01,22,1g,21,1d,22,03h,22,13,01,22,15,01,21,03,21,1j,25,1u,22,039,21,05,21,01,22,13,01,22,14,23,03,21,14,22,12,21,14,21,11,21,11,21,12,24,19,21,1k,21,03a,21,11,25,01,22,12,21,01,22,14,24,02,21,17,22,1h,21,1r,21,03a,21,12,27,12,24,16,21,02,22,14,21,15,21,13,22,11,21,14,22,13,22,12,21,13,21,1i,22,039,21,12,26,1d,24,14,21,1b,21,14,21,11,21,13,22,11,25,17,01,1c,22,039,21,11,01,24,1n,21,11,21,12,22,11,21,17,22,13,21,11,29,12,22,11,02,1c,26,035,21,11,25,1q,21,15,22,13,22,13,21,11,22,11,22,12,21,11,23,11,23,01,1d,25,08,21,02x,21,12,23,1q,21,11,21,11,22,14,22,11,21,11,21,11,21,12,21,14,23,12,21,12,24,1f,22,08,21,02x,22,12,22,1o,21,11,21,11,21,11,21,11,21,12,21,12,21,11,22,14,21,1d,21,1h,23,01,23,13,21,031,22,1h,01,18,21,11,21,12,21,11,21,12,23,15,22,11,21,1b,23,11,22,1d,27,11,02,21,02x,21,03,21,01,24,1d,01,16,22,11,22,13,22,11,21,13,21,15,21,1d,24,1f,23,12,21,03a,23,12,23,17,01,15,24,16,21,19,22,11,21,11,21,1e,22,1h,21,03c,23,11,23,1f,21,1e,22,13,22,1d,23,1j,21,03e,21,12,23,16,01,19,22,14,21,16,22,14,21,1a,21,11,21,11,21,17,22,11,21,19,21,05,21,038,22,11,21,11,22,1j,21,12,22,1a,21,11,21,1a,22,18,23,18,21,11,21,03,12,21,038,22,14,23,13,01,17,22,11,21,14,21,01,1f,21,15,25,18,21,11,21,15,21,14,22,14,21,038,21,1j,21,11,21,15,02,1c,21,11,21,11,01,16,23,15,22,11,21,14,21,11,21,12,21,11,23,13,01,21,038,21,16,21,14,01,17,21,11,21,11,21,13,02,1c,21,13,01,15,21,18,22,13,21,12,21,12,21,11,21,14,04,21,038,22,14,22,13,02,19,21,1f,22,11,22,11,21,11,02,16,21,13,22,12,21,11,21,16,21,12,23,03b,27,18,02,19,21,1k,04,1b,22,13,21,11,21,19,21,03b,26,19,03,119,21,14,21,1b,21,03b,22,11p,21,1d,21,12,21,03b,22,121,21,12,23,01,22,01,21,02,21,033,22,11j,02,14,01,1c,21,13,24,01,11,23,033,22,11o,03,1a,24,19,21,033,22,114,21,1n,21,19,21,11,23,01,16,21,033,22,113,22,1b,22,1k,22,11,21,05,13,21,034,21,18,22,1a,22,1g,21,11,21,1z,23,04,13,21,034,21,111,22,1d,22,11,21,1h,23,11,24,11,23,01,21,034,21,1u,22,1n,21,19,21,18,21,11,21,16,22,01,21,034,21,1u,21,12,21,1i,21,1c,21,16,21,11,21,18,22,01,21,034,21,16,22,11,22,12,21,17,22,18,21,11f,21,01,22,034,21,1e,22,16,21,18,23,1y,21,1e,24,034,21,16,21,11,21,15,21,1f,21,12,21,1d,22,11,22,1b,24,1g,24,034,21,14,22,12,21,14,22,15,21,1a,21,13,21,1g,21,1a,25,11,21,18,21,13,23,11,21,034,21,1e,01,14,22,1f,21,1j,21,15,21,13,23,19,21,12,26,034,21,18,21,1c,21,1w,21,11,21,15,26,11,21,19,21,13,23,035,21,1l,21,1x,21,15,22,13,23,12,21,18,21,11,25,034,21,1d,22,15,21,119,22,12,22,17,21,13,23,035,21,1d,21,11,21,14,22,11,21,116,22,11,21,13,22,15,26,035,21,1k,21,11,21,1n,01,1i,22,16,21,02,13,23,039,21,1f,21,14,23,12,02,1j,02,1g,24,15,21,15,22,03a,21,14,06,13,02,12,01,14,07,1h,02,11,01,21,1e,21,17,22,11,21,12,22,03a,21,15,01,14,04,11,21,18,03,1j,01,17,01,1l,21,12,22,03a,21,15,01,19,22,18,02,1c,21,11,22,1g,01,1b,24,13,23,03a,21,15,01,17,22,1o,21,1j,02,1a,21,11,23,13,22,03a,21,15,01,17,22,1s,21,12,21,13,21,19,04,18,24,14,21,03a,21,16,02,14,23,1o,21,11,21,14,21,13,21,11,22,1i,23,15,21,03a,21,17,04,11,22,17,21,15,23,19,22,1v,23,15,21,03a,21,1i,22,11,21,17,24,1l,22,1h,25,12,21,02,21,037,21,1b,22,12,22,11,21,12,23,12,25,11,21,18,21,11,21,19,24,1i,24,17,01,21,033,21,1c,21,12,22,12,21,1a,23,12,21,11,22,1f,21,1k,23,19,21,033,21,1d,23,11,21,13,21,16,22,12,21,11,21,11,22,13,21,12,21,13,21,14,24,1i,22,11,21,18,21,033,22,1c,21,11,24,1b,22,13,21,12,21,14,21,15,21,1g,21,16,21,1d,21,033,22,1e,23,19,22,11,21,12,21,13,21,1b,22,12,21,16,21,13,22,12,21,11,21,1g,21,033,22,1d,23,13,22,11,22,13,21,16,22,13,21,14,25,18,21,11,21,17,22,1g,22,033,22,1f,21,11,27,11,23,11,25,12,21,18,24,14,21,13,21,11,21,11,21,11,21,11,24,11,21,1a,21,13,22,033,24,1c,23,13,24,13,21,17,22,18,22,14,21,11,21,11,21,19,24,1a,26,01,21,033,24,1d,22,16,21,19,21,1e,22,11,21,11,21,13,21,11,21,17,21,11,21,19,21,03a,13,21,1i,21,1e,21,1a,22,14,21,11,21,17,21,1g,21,03a,1m,21,11,21,1o,27,11,22,1m,22,038,11,22,11b,21,04,22,1p,22,037,13,21,1j,21,1b,22,1a,22,12,21,04,22,1p,21,037,1e,23,12,22,13,21,1r,21,04,22,1p,22,035,1f,25,1x,21,04,22,12,21,15,21,1g,22,034,1h,21,02,21,1x,21,04,22,1q,21,032,1j,21,02,21,1x,21,04,21,12,24,1b,21,18,22,031,1k,21,02,22,1w,21,04,22,01,23,1c,21,1a,02z,1n,02,22,1w,21,04,22,01,21,02,1m,23,02w,1m,22,02,11,22,1j,21,1b,21,05,21,04,1c,21,19,21,02w,1c,22,19,21,12,02,1j,24,1c,05,11,03,1n,21,02v,1e,24,15,23,13,21,1i,25,1d,03,12,03,1k,23,02t,1f,2d,12,01,1j,21,02,22,1d,21,01,12,04,1g,22,11,21,12,21,02s,1g,01,24,07,23,17,22,1b,21,03,18,21,12,24,13,04,1i,25,02l,22,03,1i,02,22,08,25,1k,01,1c,21,04,13,03,17,01,1a,26,02j,21,01,21,02,1i,03,22,0c,21,1k,21,17,26,04,2p,03,21,02m,21,1k,03,22,0c,2z,03,22,03,21,01,21,038,21,1j,0j,22,04f,21,1i,051,21,1i,051,21,1h,051,21,1i,051,21,1h,052,21,1h,052,21,1g,053,21,1g,053,21,1g,053,22,1e,055,21,1e,055,21,1d,056,21,1d,056,22,1c,057,21,1b,058,21,1b,058,21,1b,058,21,1a,058,22,1a,058,22,19,059,22,19,059,22,19,059,22,18,05a,22,18,05a,22,17,05b,22,17,05b,22,17,05c,21,16,05d,21,16,05d,21,16,05d,21,15,05e,21,15,05e,21,14,05f,21,14,05f,21,13,05g,14,05g,14,05f,14,05g,14,05g,14,047", "truth": "18l,01,12,0g,11,0d,13l,04,12,06,15,0j,15,0u,13l,04,12,04,17,04,12,02,11,04,11,01,11,01,11,02,14,09,11,0k,13c,01,18,02,11,01,12,04,17,07,12,0h,11,0r,13c,02,17,02,14,09,12,04,11,05,11,03,12,01,11,04,12,03,12,02,11,03,11,0i,13c,02,16,0l,11,0b,11,04,11,01,11,03,12,01,15,0k,13c,02,14,0n,11,01,11,02,12,01,11,07,12,03,11,01,19,02,12,0f,13c,01,15,0q,11,05,12,03,12,03,11,01,12,01,12,02,11,01,13,01,13,0e,13c,02,13,0q,11,01,11,01,12,04,12,01,11,01,11,01,11,02,11,04,13,02,11,02,14,0f,13a,02,12,0o,11,01,11,01,11,01,11,01,11,02,11,02,11,01,12,04,11,0d,11,0h,17,03,134,0q,11,01,11,02,11,01,11,02,13,05,12,01,11,0b,13,01,12,0d,17,01,13a,0k,12,01,12,03,12,01,11,03,11,05,11,0d,14,0f,13,02,13e,02,13,0d,14,0g,12,01,11,01,11,0e,12,0h,13g,01,13,0f,11,0j,12,0d,13,0j,13g,02,13,0g,11,0i,11,0a,11,01,11,01,11,07,12,01,11,09,13h,01,11,01,12,01b,12,08,13,08,11,01,14,02,13b,04,12,017,15,08,11,01,11,05,11,04,12,04,13a,01g,13,05,12,01,11,04,11,01,11,02,11,01,13,03,13b,06,11,01h,12,03,11,02,11,02,11,01,11,04,13f,04,11,01f,12,02,11,01,11,06,11,02,13l,01o,11,01,11,09,13i,01q,11,0b,13e,023,11,02,13e,021,11,02,13g,022,11,03,15,01,138,021,14,09,136,014,11,0x,11,01,13,07,136,013,12,0b,12,0k,12,01,11,08,136,08,12,0a,12,0g,11,01,11,0z,13,07,136,011,12,0d,12,0j,13,01,14,01,13,01,136,0u,12,0x,11,08,11,01,11,06,12,01,136,0u,11,02,11,0i,11,0c,11,06,11,01,11,08,12,01,136,06,12,0d,12,08,11,01f,11,01,137,0m,11,08,13,0y,11,0e,139,06,11,01,11,0l,11,02,11,0d,12,01,12,0b,14,0g,139,04,12,0e,11,0a,11,03,11,0g,11,0a,15,01,11,08,11,03,13,01,136,0j,12,0f,11,0t,13,09,11,02,13b,0l,11,015,15,01,11,09,11,03,139,0l,11,018,13,02,11,08,11,01,13a,01u,12,02,12,07,11,03,139,01u,12,01,11,03,12,05,13c,01t,12,06,11,05,13d,01t,13,05,11,05,13d,01t,11,07,12,01,11,02,13d,024,11,02,13d,01z,14,03,13e,01z,11,01,13,03,13d,01e,11,0l,14,04,13c,013,11,01,11,08,11,01,12,0i,13,05,13c,0s,12,09,12,0v,13,05,13c,0i,12,01,11,07,14,0l,12,0h,15,02,13c,0f,12,01,11,02,13,02,15,01,11,08,11,01,11,09,14,0i,14,07,136,0c,11,02,12,02,11,0a,13,02,11,01,12,0f,11,0k,13,09,135,0d,13,01,11,03,11,06,12,02,11,01,11,01,12,03,11,02,11,03,11,04,14,0i,12,01,11,08,136,0c,11,01,14,0b,12,03,11,02,11,04,11,05,11,0g,11,06,11,0d,136,0e,13,09,12,01,11,02,11,03,11,0b,12,02,11,06,11,03,12,02,11,01,11,0g,136,0d,13,03,12,01,12,03,11,06,12,03,11,04,15,08,11,01,11,07,12,0g,137,0f,11,01,17,01,13,01,15,02,11,08,14,04,11,03,11,01,11,01,11,01,11,01,14,01,11,0a,11,03,139,0c,13,03,14,03,11,07,12,08,12,04,11,01,11,01,11,09,14,0a,13f,0d,12,06,11,09,11,0e,12,01,11,01,11,03,11,01,11,07,11,01,11,09,13b,03,11,0i,11,0e,11,0a,12,04,11,01,11,07,11,0g,13b,0m,11,01,11,0o,17,01,12,0m,13a,01,12,01b,17,0p,139,03,11,0j,11,0b,12,0a,12,02,17,0p,138,0e,13,02,12,03,11,0r,17,0p,137,0f,15,0x,17,02,11,05,11,0g,136,0h,11,02,11,0x,17,0q,133,0j,11,02,11,0x,16,02,14,0b,11,08,133,0k,11,02,12,0w,17,01,13,0c,11,0a,12z,0p,12,0w,17,01,11,0o,12z,0m,12,03,12,0j,11,0b,17,0g,11,09,12x,0c,12,09,11,0n,14,0c,15,0r,12w,0e,14,05,13,03,11,0i,15,0d,13,0p,12w,0f,1d,0m,11,02,12,0d,12,0m,12,01,11,02,12t,0g,1f,07,12,0b,11,0b,11,02,14,0p,12v,0i,1h,0x,15,0o,12u,0i,1i,0k,11,07,13q,0k,150,0j,151,0i,152,0i,152,0h,152,0i,152,0h,153,0h,153,0g,154,0g,154,0g,155,0e,156,0e,156,0d,157,0d,158,0c,158,0b,159,0b,159,0b,159,0a,15a,0a,15a,09,15b,09,15b,09,15b,08,15c,08,15c,07,15d,07,15d,07,15d,06,15e,06,15e,06,15e,05,15f,05,15f,04,15g,04,15g,03,15g,04,15g,04,15f,04,15g,04,15g,04,147", "points": [{"id": "n1", "name": "", "type": "pass", "x": 12.735, "y": 2.43, "group": "", "auto": true}, {"id": "n2", "name": "", "type": "pass", "x": 12.876, "y": 4.338, "group": "", "auto": true}, {"id": "n3", "name": "", "type": "pass", "x": 8.398, "y": 2.212, "group": "", "auto": true}, {"id": "n4", "name": "", "type": "pass", "x": 7.995, "y": 4.545, "group": "", "auto": true}, {"id": "n5", "name": "", "type": "pass", "x": 10.583, "y": 1.775, "group": "", "auto": true}, {"id": "n6", "name": "", "type": "pass", "x": 8.464, "y": 0.982, "group": "", "auto": true}, {"id": "p_almacn", "name": "ALMACÉN", "type": "pickup", "x": 8.406, "y": 1.13, "group": ""}, {"id": "p_base", "name": "Base", "type": "wait", "x": 7.53, "y": 4.46, "group": ""}, {"id": "p_mesa_1", "name": "MESA 1", "type": "dest", "x": 9.378, "y": 4.748, "group": "Mesas"}, {"id": "p_mesa_2", "name": "MESA 2", "type": "dest", "x": 11.52, "y": 4.519, "group": "Mesas"}, {"id": "p_mesa_3", "name": "MESA 3", "type": "dest", "x": 13.201, "y": 4.838, "group": "Mesas"}, {"id": "p_mesa_4", "name": "MESA 4", "type": "dest", "x": 13.046, "y": 2.577, "group": "Mesas"}, {"id": "p_mesa_5", "name": "MESA 5", "type": "dest", "x": 11.87, "y": 1.813, "group": "Mesas"}, {"id": "p_mesa_6", "name": "MESA 6", "type": "dest", "x": 10.102, "y": 1.752, "group": "Mesas"}, {"id": "p_inicio", "name": "INICIO", "type": "boot", "x": 7.53, "y": 4.46, "group": ""}, {"id": "j1", "name": "", "type": "pass", "x": 9.367, "y": 4.487, "group": "", "auto": true}, {"id": "j2", "name": "", "type": "pass", "x": 11.515, "y": 4.396, "group": "", "auto": true}, {"id": "j3", "name": "", "type": "pass", "x": 11.771, "y": 2.137, "group": "", "auto": true}, {"id": "j4", "name": "", "type": "pass", "x": 10.125, "y": 1.867, "group": "", "auto": true}], "edges": [["n1", "n2"], ["n3", "n4"], ["n6", "n3"], ["p_almacn", "n6"], ["p_base", "n4"], ["n4", "j1"], ["p_mesa_1", "j1"], ["j1", "j2"], ["j2", "n2"], ["p_mesa_2", "j2"], ["p_mesa_3", "n2"], ["p_mesa_4", "n1"], ["n5", "j3"], ["j3", "n1"], ["p_mesa_5", "j3"], ["n3", "j4"], ["j4", "n5"], ["p_mesa_6", "j4"], ["p_inicio", "p_base"]], "vwalls": [], "cruises": [], "dock": "p_base"};
+let world="taller";
 function fillRect(arr,r,v){
   const x0=Math.max(0,Math.floor(r.x/CS+1e-6)),x1=Math.min(GW,Math.ceil((r.x+r.w)/CS-1e-6));
   const y0=Math.max(0,Math.floor(r.y/CS+1e-6)),y1=Math.min(GH,Math.ceil((r.y+r.h)/CS-1e-6));
   for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++)arr[y*GW+x]=v;
 }
-function buildTruth(){truth.fill(0);SOLIDS.forEach(r=>fillRect(truth,r,1));GLASS.forEach(r=>fillRect(truth,r,2));obstacles.forEach(o=>fillRect(truth,{x:o.x-0.25,y:o.y-0.25,w:0.5,h:0.5},3));}
+function buildTruth(){truth.fill(0);if(world==="aula"){const t=unrleRaw(AULA_DATA.truth);if(t)truth.set(t);}else{SOLIDS.forEach(r=>fillRect(truth,r,1));GLASS.forEach(r=>fillRect(truth,r,2));}obstacles.forEach(o=>fillRect(truth,{x:o.x-0.25,y:o.y-0.25,w:0.5,h:0.5},3));}
 function T(x,y){if(x<0||y<0||x>=WW||y>=WH)return 1;return truth[((y/CS)|0)*GW+((x/CS)|0)];}
 function hitsBody(x,y,r){
   const c0=Math.floor((x-r)/CS),c1=Math.floor((x+r)/CS),r0=Math.floor((y-r)/CS),r1=Math.floor((y+r)/CS);
@@ -613,6 +785,9 @@ function scanRobot(grid,keep){
 }
 
 /* ================= Mapas ================= */
+function unrleRaw(s){const g=new Uint8Array(GW*GH);let i=0;for(const t of String(s).split(",")){const v=+t[0],n=parseInt(t.slice(1),36);if(!(v>=0&&v<=2)||!(n>0)||i+n>g.length)return null;g.fill(v,i,i+n);i+=n;}return i===g.length?g:null;}
+function setWorld(w){w=w==="aula"?"aula":"taller";if(world===w)return;world=w;obstacles.length=0;buildTruth();}
+function makeAula(){const d=AULA_DATA;return {id:d.id,name:d.name,world:"aula",grid:unrleRaw(d.grid),points:d.points.map(p=>({...p})),edges:d.edges.map(e=>[...e]),vwalls:[],cruises:[],dock:d.dock};}
 buildTruth();
 function makeSample(){
   const P=(id,name,type,x,y,group)=>({id,name,type,x,y,group:group||""});
@@ -639,7 +814,7 @@ function makeSample(){
   m.edges.forEach(([a,b])=>{const A=by(a),B=by(b),L=Math.hypot(B.x-A.x,B.y-A.y);for(let t=0;t<=L;t+=0.5)scanAt(A.x+(B.x-A.x)*t/L,A.y+(B.y-A.y)*t/L,m.grid);});
   return m;
 }
-const maps=[makeSample()];
+const maps=[makeSample(),makeAula()];
 let curMapId="m1";
 const curMap=()=>maps.find(m=>m.id===curMapId);
 const viewMap=()=>ui.screen==="mapTool"?ui.mt.draft:curMap();
@@ -651,7 +826,7 @@ const groupsOf=m=>[...new Set(m.points.filter(p=>isDest(p)&&p.group).map(p=>p.gr
 
 /* ================= Estado ================= */
 const S={
-  theme:"light",brightness:1,volume:0.6,voice:"f",wlan:true,lang:"es",
+  theme:"dark",brightness:1,followEnabled:true,phrases:["Atención, robot en movimiento.","Por favor, deje paso."],phraseOff:[],phraseLoop:true,phraseInt:10,volume:0.6,voice:"f",wlan:true,lang:"es",
   vDel:0.8,vCruise:0.6,vRet:0.8,vLift:0.6,priority:"dist",autoDone:30,delReturn:"",cruiseReturn:"",liftReturn:"",
   quickDel:"complete",quickCruise:"complete",playTask:"off",playArrive:"voice",multiPoint:false,
   cruiseStop:"stay",cruiseWait:10,
@@ -670,7 +845,7 @@ let power="on",bootLeft=0,localized=true,brakeOn=true,swapLeft=0;
 let simSpeed=1,simT=0,idleT=0,showRays=false,showTruth=false,obsMode=false,personMode=false;
 let rays=[],pauseLeft=0,arriveLeft=0,waitLeft=0,actLeft=0,toastText="",toastLeft=0;
 const history=[];
-const ui={drawer:false,assist:{level:"low",on:false},screen:"home",paused:false,tray:0,assign:{},group:"",search:"",cruiseSel:"c1",cr:null,lift:{from:null,to:null,group:""},
+const ui={rview:0,exp:{},wiz:null,mlMenu:null,mlDel:null,crPick:false,drawer:false,assist:{level:"low",on:false},screen:"home",paused:false,tray:0,assign:{},group:"",search:"",cruiseSel:"c1",cr:null,lift:{from:null,to:null,group:""},
   set:{tab:"func",sub:null,back:null},mt:null,modal:null,goTo:"p_wait",follow:null,lastAssign:null,favs:[]};
 const drive={f:0,b:0,l:0,r:0};
 
@@ -689,7 +864,8 @@ const MODE_LABEL={delivery:"Entrega",cruise:"Crucero",lift:"Elevación",return:"
 function log(msg,k){const el=document.getElementById("log"),d=document.createElement("div");d.innerHTML=`<time>${fmtT(simT)}</time><span class="${k||""}">${esc(msg)}</span>`;el.prepend(d);while(el.children.length>90)el.lastChild.remove();}
 function toast(t){toastText=t;toastLeft=3.5;updateLive();}
 function speak(t){if(!S.volume||power!=="on")return;try{const u=new SpeechSynthesisUtterance(t);u.lang="es-ES";u.volume=S.volume;u.pitch=S.voice==="m"?0.7:1.15;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
-function addHistory(mode,text,result){history.unshift({t:clock(),mode,text,result});if(history.length>40)history.pop();}
+function dateStr(){const d=new Date();return `${d.getFullYear()}.${d.getMonth()+1}.${d.getDate()}`;}
+function addHistory(mode,text,result){history.unshift({t:clock(),st:(job&&job.st)||clock(),d:dateStr(),mode,text,result});if(history.length>40)history.pop();}
 
 /* ================= Planificación ================= */
 const isLocked=(a,b)=>locked.some(l=>l.until>simT&&((l.a===a&&l.b===b)||(l.a===b&&l.b===a)));
@@ -721,6 +897,7 @@ function canTask(){
   return true;
 }
 function navTo(pid,onArrive,opts){
+  if(job&&!job.st)job.st=clock();
   const m=curMap(),p=ptById(m,pid),r=plan(pid);
   if(!r){toast(`No hay camino hasta ${p?p.name:"ese punto"}.`);log(`Sin camino hasta ${p?p.name:pid}`,"e");return false;}
   nav={route:r,i:0,onArrive,target:pid,back:!!(opts&&opts.back)}; R.charging=false; blocked=false; blockedT=0; return true;
@@ -791,7 +968,7 @@ function startLift(){
   if(navTo(from,()=>arrivePick(),{back:S.arrival==="back"})){ui.screen="moving";ui.paused=false;}else job=null;
   renderScreen();
 }
-function rackNear(x,y,r){return racks.find(k=>!k.carried&&Math.hypot(k.x-x,k.y-y)<r);}
+function rackNear(x,y,r){if(world!=="taller")return undefined;return racks.find(k=>!k.carried&&Math.hypot(k.x-x,k.y-y)<r);}
 function arrivePick(){doLift();}
 function doLift(){
   const k=rackNear(R.x,R.y,0.45);
@@ -817,7 +994,7 @@ function startGoto(){
 function startCall(pid){
   const m=curMap(),p=ptById(m,pid);
   if(power!=="on"||!localized||estop){log("Llamada ignorada: el robot no está disponible","w");return;}
-  if(!S.callEnabled){log("Llamada ignorada: las llamadas están desactivadas en Ajustes","w");toast("Llamadas desactivadas (Ajustes → Funciones del robot → Llamadas).");return;}
+  if(!S.callEnabled){log("Llamada ignorada: las llamadas están desactivadas en Configuración","w");toast("Llamadas desactivadas (Configuración → Funciones del robot → Función de llamada).");return;}
   const idle=!job&&!nav&&["home","delivery","cruise","lifting","taskList"].includes(ui.screen);
   const charging=job&&(job.type==="charging"||job.type==="charge");
   if(!(idle||(charging&&S.callableCharging&&R.battery>20))){log(`Llamada desde ${p.name} ignorada: robot ocupado`,"w");return;}
@@ -1022,46 +1199,105 @@ const PUSH_SVG=`<svg viewBox="0 0 160 100" aria-hidden="true"><rect x="0" y="0" 
 <circle cx="24" cy="80" r="4" fill="#1d2024"/><circle cx="72" cy="80" r="4" fill="#1d2024"/>
 <circle cx="116" cy="22" r="7" fill="#e9c3a0"/><path d="M114 30l-6 22 4 24M108 52l14 24M114 34l-18 2M114 36l-18 6" stroke="#2f4a7a" stroke-width="5" stroke-linecap="round" fill="none"/>
 <path d="M30 90h100" stroke="#cdd3dc" stroke-width="1"/></svg>`;
+/* Robot de inicio en 3D sencillo: cajas que giran sobre el eje vertical (proyección ortográfica).
+   x = ancho, z = profundidad (el frente del robot mira a +z), y = altura en pantalla. */
+function shade(hex,k){const n=parseInt(hex.slice(1),16),f=c=>Math.max(0,Math.min(255,Math.round(c*k)));return `rgb(${f(n>>16)},${f((n>>8)&255)},${f(n&255)})`;}
+function robotParts(lift){
+  const up=lift?6:0,top=158-up;
+  const B=(x,z,w,d,y0,y1,col,deco)=>({x,z,w,d,y0,y1,col,deco:deco||{}});
+  return [
+    // ruedas
+    B(-37,48,12,14,203,212,"#1d2024"),B(37,48,12,14,203,212,"#1d2024"),B(-37,-48,12,14,203,212,"#1d2024"),B(37,-48,12,14,203,212,"#1d2024"),
+    // base (835 × 500 mm): franja oscura y luces
+    B(0,0,96,140,168,204,"#2b2f34",{
+      f:[[-44,44,176,194,"#16191c"],[-41,-31,179,191,"#4fb4ff"],[31,41,179,191,"#4fb4ff"],[-6,6,182,188,"#8b929b"]],
+      b:[[-44,44,176,194,"#16191c"],[-41,-29,181,189,"#e0453a"],[29,41,181,189,"#e0453a"]],
+      s:[[-66,66,176,194,"#16191c"],[-64,-56,181,189,"#e0453a"],[55,64,179,191,"#4fb4ff"],[-40,-33,182,188,"#3a3f45"],[-26,-19,182,188,"#3a3f45"],[-12,-5,182,188,"#3a3f45"],[2,9,182,188,"#3a3f45"],[16,23,182,188,"#3a3f45"],[30,37,182,188,"#3a3f45"]]}),
+    // plataforma
+    B(0,0,88,124,top+6,top+10+up,"#1b1e22"),B(0,0,100,136,top,top+6,"#3a3f45"),B(0,0,28,24,top-3,top+1,"#3a3f45"),
+    // columna
+    B(0,0,24,20,36,top,"#5d636b",{f:[[-8,0,36,top,"#747b84"]],b:[[-8,0,36,top,"#6a7078"]]}),
+    // asa
+    B(0,12,92,5,55,60,"#2b2f34"),B(-46,12,6,6,51,65,"#2b2f34"),B(46,12,6,6,51,65,"#2b2f34"),
+    // cabeza con pantalla de ojos, luces azules a los lados y tira de luz arriba
+    B(0,0,40,24,4,8,"#6fd0f2"),
+    {...B(-24.5,0,3,12,15,27,"#2f6bff"),bias:-60},{...B(24.5,0,3,12,15,27,"#2f6bff"),bias:-60},
+    B(0,0,46,26,7,38,"#16191c",{f:[["eye",-10,21],["eye",10,21],["mouth",0,28]],b:[[-10,10,18,24,"#2a2e33"]],s:[[-6,6,15,27,"#2f6bff"]]}),
+    B(10,0,6,6,2,5,"#e0453a")
+  ];
+}
 function robotFrontSVG(opts){
-  // Vista frontal para la pantalla de inicio: 500 mm de ancho × 1350 mm de alto, sin carga
-  opts=opts||{};const up=opts.lift?5:0,pt=226-up;
-  return `<svg viewBox="0 0 110 262" role="img" aria-label="Robot T300 visto de frente">
-    <ellipse cx="55" cy="257" rx="40" ry="3.5" fill="#000" opacity=".12"/>
-    <rect x="49" y="40" width="12" height="${pt-40}" fill="#2b2f34"/><rect x="46" y="${pt-4}" width="18" height="4" rx="1" fill="#33383e"/>
-    <rect x="24" y="72" width="25" height="4" rx="2" fill="#2b2f34"/><rect x="61" y="72" width="25" height="4" rx="2" fill="#2b2f34"/>
-    <rect x="24" y="69" width="3.5" height="10" rx="1.5" fill="#2b2f34"/><rect x="82.5" y="69" width="3.5" height="10" rx="1.5" fill="#2b2f34"/>
-    <rect x="41" y="5" width="28" height="4" rx="2" fill="#6fd0f2"/><rect x="61" y="3" width="5" height="3" rx="1" fill="#e0453a"/>
-    <rect x="38" y="8" width="34" height="27" rx="4" fill="#15181b"/>
-    <ellipse cx="48" cy="20" rx="3" ry="3.6" fill="#fff"/><ellipse cx="62" cy="20" rx="3" ry="3.6" fill="#fff"/>
-    <path d="M52.6 25.5q2.4 2 4.8 0" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
-    <rect x="35" y="14" width="3" height="9" rx="1.5" fill="#2f6bff"/><rect x="72" y="14" width="3" height="9" rx="1.5" fill="#2f6bff"/>
-    <rect x="22" y="${pt+4}" width="66" height="${6+up}" fill="#1b1e22"/>
-    <rect x="12" y="${pt}" width="86" height="5" rx="1.5" fill="#363b41"/>
-    <rect x="14" y="236" width="82" height="16" rx="4" fill="#2b2f34"/><rect x="17" y="240" width="76" height="7" rx="2" fill="#15181b"/>
-    <rect x="19" y="241" width="7" height="5" rx="1" fill="#4fb4ff"/><rect x="84" y="241" width="7" height="5" rx="1" fill="#4fb4ff"/>
-    <rect x="17" y="251" width="9" height="6" rx="2.5" fill="#1d2024"/><rect x="84" y="251" width="9" height="6" rx="2.5" fill="#1d2024"/>
-  </svg>`;
+  opts=opts||{};const th=opts.ang||0,c=Math.cos(th),sn=Math.sin(th),CX=90;
+  const P=(x,z)=>({X:CX+x*c+z*sn,Z:-x*sn+z*c});
+  const boxes=robotParts(opts.lift).map(b=>({...b,depth:P(b.x,b.z).Z+(b.bias||0)}));
+  boxes.sort((a,b)=>a.depth-b.depth);
+  let out="";
+  for(const b of boxes){
+    const hw=b.w/2,hd=b.d/2;
+    // caras: frente (+z), espalda (-z), lados (+x derecha del robot, -x)
+    const faces=[
+      {k:"f",n:[0,1],a:[-hw,hd],e:[hw,hd]},
+      {k:"b",n:[0,-1],a:[hw,-hd],e:[-hw,-hd]},
+      {k:"r",n:[1,0],a:[hw,hd],e:[hw,-hd]},
+      {k:"l",n:[-1,0],a:[-hw,-hd],e:[-hw,hd]}];
+    for(const f of faces){
+      const vz=-f.n[0]*sn+f.n[1]*c;if(vz<=0.001)continue;
+      const vx=f.n[0]*c+f.n[1]*sn;
+      const A=P(b.x+f.a[0],b.z+f.a[1]),E=P(b.x+f.e[0],b.z+f.e[1]);
+      const x0=Math.min(A.X,E.X),x1=Math.max(A.X,E.X);if(x1-x0<0.05)continue;
+      const k=0.72+0.28*vz-0.08*vx;
+      out+=`<rect x="${x0.toFixed(2)}" y="${b.y0}" width="${(x1-x0).toFixed(2)}" height="${b.y1-b.y0}" fill="${shade(b.col,k)}"/>`;
+      // decoración de la cara: u va de a a e (−ancho/2 … +ancho/2 de la cara)
+      const len=(f.k==="f"||f.k==="b")?b.w:b.d,U=u=>A.X+(E.X-A.X)*((u+len/2)/len);
+      const list=f.k==="r"||f.k==="l"?(b.deco.s||[]).map(d=>f.k==="l"?d:[-d[1],-d[0],d[2],d[3],d[4]]):(b.deco[f.k]||[]);
+      for(const d of list){
+        if(d[0]==="eye"){const cx=U(d[1]),rx=3.6*Math.abs(E.X-A.X)/len;out+=`<ellipse cx="${cx.toFixed(2)}" cy="${d[2]}" rx="${Math.max(.2,rx).toFixed(2)}" ry="4.2" fill="#fff"/>`;continue;}
+        if(d[0]==="mouth"){const s1=Math.abs(E.X-A.X)/len,cx=U(d[1]);out+=`<path d="M${(cx-3*s1).toFixed(2)} ${d[2]}q${(3*s1).toFixed(2)} 2.4 ${(6*s1).toFixed(2)} 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>`;continue;}
+        const u0=U(d[0]),u1=U(d[1]),xa=Math.min(u0,u1),xb=Math.max(u0,u1);if(xb-xa<0.05)continue;
+        out+=`<rect x="${xa.toFixed(2)}" y="${d[2]}" width="${(xb-xa).toFixed(2)}" height="${d[3]-d[2]}" fill="${shade(d[4],0.8+0.2*vz)}"/>`;
+      }
+    }
+  }
+  const rx=Math.abs(48*c)+Math.abs(70*sn);
+  return `<svg viewBox="0 0 180 220" role="img" aria-label="Robot T300"><ellipse cx="90" cy="214" rx="${rx.toFixed(1)}" ry="4" fill="#000" opacity=".14"/>${out}</svg>`;
+}
+let spinAnim=null;
+function spinRobot(){
+  if(spinAnim)return;const T=3200,t0=performance.now();
+  const step=now=>{const el=document.querySelector(".rspin");const t=Math.min(1,(now-t0)/T);
+    const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2; // empieza y acaba despacio
+    if(el)el.innerHTML=robotFrontSVG({lift:S.model==="lift"&&R.lift,ang:e*Math.PI*2});
+    if(t<1&&el)spinAnim=requestAnimationFrame(step);else{spinAnim=null;if(el)el.innerHTML=robotFrontSVG({lift:S.model==="lift"&&R.lift});}};
+  spinAnim=requestAnimationFrame(step);
 }
 const backBtn=(act)=>`<button class="ib backb" data-act="${act||"exitMode"}" aria-label="Volver">${svg("back")}</button>`;
 function steadyBtn(){return `<button class="ib ${S.steady===2?"on2":S.steady===1?"on":""}" data-steady aria-label="Modo estable">${svg("steady")}</button>`;}
 
 const SCREENS={
 home(){
-  const m=curMap(),g=ptById(m,ui.goTo)||dockPt(m),idx=g?m.points.filter(p=>!p.auto&&p.type!=="pass").indexOf(g)+1:0,lift=S.model==="lift";
-  const tile=(act,col,ic,label,off,sub)=>`<button class="mode ${off?"off":""}" data-act="${act}"><span class="mi" style="background:${col}">${ic.startsWith("<")?ic:svg(ic)}</span>${label}${sub?`<small>${sub}</small>`:""}</button>`;
+  const m=curMap(),g=ptById(m,ui.goTo)||dockPt(m),lift=S.model==="lift";
+  const tile=(act,cls,ic,label,extra)=>`<button class="mode ${extra||""}" data-act="${act}"><span class="mi ${cls}">${ic.startsWith("<")?ic:svg(ic)}</span>${label}</button>`;
   const FOLLOW='<svg viewBox="0 0 24 24"><circle cx="9" cy="5" r="2"/><path d="M9 8v6l-3 6M9 14l3 6M6 11h6M16 12h5M18 9l3 3-3 3"/></svg>';
+  const VDA='<svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/><path d="M10 7h4M7 10v4M17 10v4M10 17h4"/></svg>';
+  const LIFT='<svg viewBox="0 0 24 24"><path d="M7 3v8M4.5 5.5 7 3l2.5 2.5M17 11V3M14.5 8.5 17 11l2.5-2.5"/><rect x="3" y="13" width="18" height="3" rx="1"/><path d="M5 16v3M19 16v3"/><circle cx="7" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>';
   return `<div class="col grow">
     ${localized?"":`<div class="posl"><span>Posición perdida. Empuja el robot hasta el punto de arranque antes de asignar tareas.</span><span class="inline"><button class="btn red" data-act="reloc">Reintentar</button><button class="btn" data-act="mapSel">Selección de mapa</button></span></div>`}
     <div class="home"><div class="rcard"><button class="drawer" data-act="drawer" aria-label="Más modos">⋯</button>
-      ${ui.drawer?`<div class="dmenu"><button data-act="goAssist">${svgS("up")}Modo asistido</button><button data-act="goFollow">${svgS("follow")}Modo seguimiento</button></div>`:""}<span class="badge">${lift?"T300 · elevador":"T300"}</span>
-      <div class="robo grow">${robotFrontSVG({lift:lift&&R.lift})}</div>
+      ${ui.drawer?`<div class="dmenu"><button data-act="goAssist">${svgS("up")}Modo asistido</button><button data-act="goFollow">${svgS("follow")}Modo seguimiento</button><button data-act="charge">${svgS("bolt")}Recarga con un toque</button></div>`:""}
+      <button class="hi" data-act="spinRobot" aria-label="Girar el robot">Hi</button>
+      <button class="robo rspin grow" data-act="spinRobot" aria-label="Toca para girar el robot">${robotFrontSVG({lift:lift&&R.lift})}</button>
       <button class="ib pw" data-act="powerMenu" aria-label="Apagar o reiniciar">${svg("power")}</button></div>
-      <div class="modes">${tile("goCruise","#ef4b5f","loop","Crucero")}${tile("goLift","#5b7fa6","up","Elevación",!lift,lift?"":"Solo modelo WTIDL1")}${tile("goDelivery","#5ccf5a","box","Entrega")}${tile("goFollow","#2a6af6",FOLLOW,"Sígueme")}</div></div>
-    <div class="hbar"><button class="hb goto" data-act="goto"><span>Ir a ${idx?`<span class="n">${idx}</span> `:""}<b>${esc(g?g.name:"—")}</b></span><span class="ch">»</span></button>
+      <div class="modes">${tile("goVda","g-vda",VDA,"VDA5050")}${tile("goDelivery","g-del","box","Entrega")}${tile("goFollow","g-fol",FOLLOW,"Sígueme","tall")}${tile("goCruise","g-cru","loop","Crucero")}${tile("goLift","g-lift",LIFT,"Elevación",lift?"":"lowk")}</div></div>
+    <div class="hbar"><button class="hb goto" data-act="goto"><span>Ir <b>${esc(g?g.name:"—")}</b></span><span class="ch">»</span></button>
       <button class="hb mut" data-act="switchGo">Cambiar ▴</button>
       <button class="hb" data-act="taskList" aria-label="Lista de tareas">${svgS("prev")}<span class="hl">Lista de tareas</span></button>
-      <button class="hb" data-act="charge" aria-label="Recarga con un toque">${svgS("bolt")}<span class="hl">Recarga con un toque</span></button>
       <button class="hb" data-act="settings" aria-label="Ajustes">${svgS("gear")}<span class="hl">Ajustes</span></button></div></div>`;
+},
+vda(){
+  return `<div class="col grow"><div class="inline">${backBtn("home")}<b>VDA5050</b></div>
+  <div class="card col grow" style="padding:1em;gap:.6em"><div class="lbl"><span class="rd"></span>Sin conexión con el sistema maestro</div>
+  <div class="small" style="max-width:36em">VDA5050 es un estándar para que un programa de gestión de flotas (de varios fabricantes) mande órdenes a los robots: a qué punto ir, qué ruta seguir, y que el robot le devuelva su estado.</div>
+  <div class="small" style="max-width:36em">En el robot real se conecta a un servidor de la red del taller. En el simulador no hay servidor: esta pantalla solo sirve para saber qué es.</div></div></div>`;
 },
 delivery(){
   const m=curMap();let dests=m.points.filter(isDest).filter(p=>!S.hiddenGroups.includes(p.group));
@@ -1096,12 +1332,12 @@ moving(){
 paused(){
   const m=curMap();let title="En pausa",btns="";
   if(job&&job.type==="delivery"){title=`En camino a ${ptById(m,job.tasks[job.cur].pid).name}`;
-    btns=`<button class="btn" data-act="modify"><span class="ic" style="background:#3b82f6">✎</span>Modificar tarea</button><button class="btn" data-act="early"><span class="ic" style="background:#1fae58">✓</span>Recoger antes</button><button class="btn" data-act="cancelAll"><span class="ic" style="background:#ef3f4a">✕</span>Cancelar todo</button><button class="btn" data-act="return"><span class="ic" style="background:#5d7bd6">↩</span>Volver</button>`;}
+    btns=`<button class="btn" data-act="modify"><span class="ic" style="background:#3b82f6">✎</span>Modificar tarea</button><button class="btn" data-act="early"><span class="ic" style="background:#1fae58">✓</span>Recoger antes</button><button class="btn" data-act="cancelAll"><span class="ic" style="background:#ef3f4a">✕</span>Cancelar todo</button><button class="btn" data-act="return"><span class="ic" style="background:#5d7bd6">↩</span>Regresar</button>`;}
   else {title=job&&job.type==="cruise"?"Crucero":job?MODE_LABEL[job.type]||"Tarea":"Tarea";
-    btns=`<button class="btn" data-act="cancelAll"><span class="ic" style="background:#ef3f4a">✕</span>Cancelar tarea</button>${job&&job.type!=="return"?`<button class="btn" data-act="return"><span class="ic" style="background:#5d7bd6">↩</span>Volver</button>`:""}`;}
+    btns=`<button class="btn" data-act="cancelAll"><span class="ic" style="background:#ef3f4a">✕</span>Cancelar tarea</button>${job&&job.type!=="return"?`<button class="btn" data-act="return"><span class="ic" style="background:#5d7bd6">↩</span>Regresar</button>`:""}`;}
   const hi=job&&job.type==="delivery"?[job.tasks[job.cur].tray]:[];
   return `<div class="col" style="width:30%"><div class="robo grow">${robotSVG(hi,hi.length?{[hi[0]]:ptById(m,job.tasks[job.cur].pid).name}:[])}</div></div>
-  <div class="card state grow" data-act="resume"><div class="lbl"><span class="rd"></span>${esc(title)}</div><div class="huge" style="font-weight:400">En pausa</div><div class="small" data-live="pause"></div>
+  <div class="card state grow" data-act="resume"><div class="lbl"><span class="rd"></span>En curso · ${esc(title)}</div><div class="huge" style="font-weight:400">En pausa</div><div class="small" data-live="pause"></div>
   <div class="pgrid" style="margin-top:.8em">${btns}</div></div>`;
 },
 arrived(){
@@ -1116,7 +1352,7 @@ cruise(){
   const cards=m.cruises.map(c=>{const pts=c.pts.map(id=>ptById(m,id)).filter(Boolean);
     const n=pts.length,dots=pts.map((p,i)=>`<circle cx="${10+i*(80/Math.max(1,n-1))}" cy="20" r="3" fill="#3b82f6"/><text x="${10+i*(80/Math.max(1,n-1))}" y="32" font-size="5.5" text-anchor="middle" fill="#808a9c">${esc(p.name.slice(0,8))}</text>`).join("");
     return `<div class="route ${ui.cruiseSel===c.id?"sel":""}" data-act="selCruise" data-arg="${c.id}"><div class="pv"><svg viewBox="0 0 100 40" preserveAspectRatio="xMidYMid meet"><line x1="10" y1="20" x2="90" y2="20" stroke="#9fb6e8" stroke-width="1"/>${dots}</svg></div>
-    <div class="rn">${esc(c.name)}</div><div class="small">${c.type==="loop"?"Bucle":c.type==="time"?`${Math.floor(c.val/60)}h${c.val%60}min`:`${c.val} vueltas`}</div>
+    <div class="rn">${esc(c.name)}</div><div class="small">${c.type==="loop"?"Modo de ciclo":c.type==="time"?`Por tiempo · ${Math.floor(c.val/60)}h${c.val%60}min`:`Por número · ${c.val}`}</div>
     <div class="ra"><button class="del" data-act="delCruise" data-arg="${c.id}" aria-label="Borrar ruta">🗑</button><button data-act="editCruise" data-arg="${c.id}" aria-label="Editar ruta">✎</button></div></div>`;}).join("");
   return `<div class="col grow"><div class="inline" style="justify-content:space-between">${backBtn()}<span class="inline">
     <button class="ib" data-act="newCruise" aria-label="Añadir ruta">${svg("plus")}</button><button class="ib" data-act="return" aria-label="Volver al punto de espera">${svg("ret")}</button>${steadyBtn()}
@@ -1125,11 +1361,15 @@ cruise(){
     <button class="go" data-act="startCruise" style="align-self:center;width:45%" ${m.cruises.length?"":"disabled"}>Iniciar <span class="ch">»</span></button></div>`;
 },
 cruiseEdit(){
-  const m=curMap(),c=ui.cr,avail=m.points.filter(p=>p.type!=="chg");
-  return `<div class="col grow"><div class="inline" style="justify-content:space-between"><button class="btn soft" data-act="goCruise">‹ Cancelar</button><b>${c.id?"Editar ruta":"Añadir ruta de crucero"}</b><button class="btn pri" data-act="crNext" ${c.pts.length>=2?"":"disabled"}>Finalizar</button></div>
-  <div class="inline"><input type="text" id="crName" value="${esc(c.name)}" aria-label="Nombre de la ruta" style="max-width:none;flex:1"><button class="btn soft" data-act="crUndo" ${c.pts.length?"":"disabled"}>Quitar último</button></div>
-  <div class="okb"><b>Ruta:</b> ${c.pts.length?c.pts.map(id=>esc(ptById(m,id)?.name||"?")).join(" → "):"toca los puntos en orden (mínimo dos)"}</div>
-  <div class="chips grow card" style="padding:.6em">${avail.map(p=>`<button class="chip" data-act="crAdd" data-arg="${p.id}">${esc(p.name)}</button>`).join("")}</div></div>`;
+  const m=curMap(),c=ui.cr,avail=m.points.filter(p=>p.type!=="chg"&&!p.auto),pts=c.pts.map(id=>ptById(m,id));
+  const n=pts.length,X=i=>10+i*(80/Math.max(1,n-1));
+  const pv=`<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid meet"><line x1="10" y1="22" x2="90" y2="22" stroke="#9fb6e8" stroke-width="1"/>${pts.map((p,i)=>`<circle cx="${X(i)}" cy="22" r="3" fill="#3b82f6"/><text x="${X(i)}" y="${i%2?36:14}" font-size="5" text-anchor="middle" fill="#808a9c">${esc((p?.name||"?").slice(0,9))}</text>`).join("")}</svg>`;
+  const mode=c.type==="loop"?"Modo de ciclo":c.type==="time"?`Cruzar por tiempo · ${Math.floor(c.val/60)}h${c.val%60}min`:`Crucero por número ${c.val}`;
+  return `<div class="col grow"><div class="ceh"><button class="lnk" data-act="goCruise">‹ Cancelar</button><button class="cen" data-act="crRename">${esc(c.name)} ✎</button><button class="btn pri sm" data-act="crSave" ${c.pts.length>=2?"":"disabled"}>Completo</button></div>
+  <div class="ceb grow"><div class="cel card"><div class="pv grow">${n?pv:'<span class="small">Añade puntos a la ruta →</span>'}</div><button class="cem" data-act="crNext">⤳ ${mode} ›</button></div>
+  <div class="cer card"><div class="cel2">${pts.map((p,i)=>`<div class="cerow"><button class="crx" data-act="crDel" data-arg="${i}" aria-label="Quitar">−</button><span class="t">${esc(p?.name||"?")}</span><button class="xx" data-act="crUp" data-arg="${i}" aria-label="Subir" ${i?"":"disabled"}>⇕</button></div>`).join("")||'<span class="small">La ruta está vacía. Necesita al menos dos puntos.</span>'}</div>
+  <button class="cadd" data-act="crPick">+ Seguir añadiendo</button>
+  ${ui.crPick?`<div class="chips">${avail.map(p=>`<button class="chip" data-act="crAdd" data-arg="${p.id}">${esc(p.name)}</button>`).join("")}</div>`:""}</div></div></div>`;
 },
 cruiseStop(){
   const p=ptById(curMap(),job.pts[job.i]);
@@ -1157,7 +1397,7 @@ liftAct(){
 },
 liftFail(){
   return `<div class="card state grow" style="cursor:default"><div class="lbl" style="color:var(--s-red)"><span class="rd"></span>Elevación fallida</div><div class="big">No se identifica la estantería</div>
-  <div class="small" style="max-width:32em">El LiDAR no encuentra las cuatro patas en el punto. Comprueba que hay una estantería y que sus medidas coinciden con las de Ajustes → Funciones del robot → Ajustes de funcionamiento → Elevación.</div>
+  <div class="small" style="max-width:32em">El LiDAR no encuentra las cuatro patas en el punto. Comprueba que hay una estantería y que sus medidas coinciden con las de Configuración → Funciones del robot → Ajustes de funcionamiento → Elevación.</div>
   <button class="btn pri" data-act="home" style="margin-top:.8em">Aceptar</button></div>`;
 },
 follow(){
@@ -1180,9 +1420,11 @@ assist(){
     <div class="seg3">${lv.map(([k,l,d])=>`<button class="${A.level===k?"on":""}" data-act="assistLvl" data-arg="${k}" ${A.on?"disabled":""}><b>${l}</b><small>Carga ${d}</small></button>`).join("")}</div></div></div></div>`;
 },
 taskList(){
-  return `<div class="col grow"><div class="inline">${backBtn("home")}<b>Lista de tareas</b></div>
+  const days=[];history.forEach(h=>{const d=h.d||dateStr();let g=days.find(x=>x.d===d);if(!g)days.push(g={d,rows:[]});g.rows.push(h);});
+  return `<div class="col grow"><div class="thh"><b>Historial de tareas</b><button class="xx" data-act="home" aria-label="Cerrar">✕</button></div>
   ${job?`<div class="okb">En curso: ${MODE_LABEL[job.type]||job.type}</div>`:""}
-  <div class="card col grow" style="padding:.5em;overflow:auto">${history.length?history.map(h=>`<div class="row"><span class="ty pass">${h.t}</span><span class="t">${esc(h.mode)} · ${esc(h.text)}</span><span class="small">${esc(h.result)}</span></div>`).join(""):'<span class="small">Aún no se ha completado ninguna tarea.</span>'}</div></div>`;
+  <div class="card col grow th" style="overflow:auto"><div class="thr thc0"><span>Modo</span><span>Información</span><span>Hora de inicio</span><span>Hora de finalización</span></div>
+  ${days.map(g=>`<div class="thd">${g.d}</div>`+g.rows.map(h=>`<div class="thr"><span>${esc(h.mode)}</span><span>${esc(h.text)}<small>${esc(h.result)}</small></span><span>${h.st||h.t}</span><span>${h.t}</span></div>`).join("")).join("")||'<span class="small" style="padding:.8em">Aún no se ha completado ninguna tarea.</span>'}</div></div>`;
 },
 charging(){
   return `<div class="col" style="width:30%"><div class="robo grow">${robotSVG([],[])}</div></div><div class="card state grow" style="cursor:default"><div class="lbl"><span class="gd"></span>Cargando</div><div class="huge" data-live="bigbat"></div>
@@ -1199,6 +1441,15 @@ collision(){
   <div class="inline" style="margin-top:.8em"><button class="btn pri" data-act="colBack">Retroceder y cancelar</button><button class="btn soft" data-act="showTruth">Ver plano real</button></div></div>`;
 },
 settings(){return SETTINGS();},
+mapList(){
+  const card=mm=>{const on=mm.id===curMapId;return `<div class="mlc ${on?"on":""}"><canvas data-thumb="${mm.id}" width="200" height="120" aria-label="Miniatura de ${esc(mm.name)}"></canvas>
+    <div class="mlr"><span class="mln">${esc(mm.name)}</span>${on?'<span class="mlu">En uso</span>':""}</div>
+    <div class="mla"><button class="mlb" data-act="mlEdit" data-arg="${mm.id}" aria-label="Editar ${esc(mm.name)}">✎</button><button class="mlb" data-act="mlMore" data-arg="${mm.id}" aria-label="Más opciones">⋯</button></div>
+    ${ui.mlMenu===mm.id?`<div class="mlm"><button data-act="mlUse" data-arg="${mm.id}" ${on?"disabled":""}>Usar este mapa</button><button class="del" data-act="mlDelete" data-arg="${mm.id}" ${on?"disabled":""}>${ui.mlDel===mm.id?"¿Borrar? Pulsa otra vez":"Borrar"}</button></div>`:""}</div>`;};
+  return `<div class="col grow"><div class="mlh"><button class="ib backb" data-act="mlBack" aria-label="Volver">${svg("back")}</button><b>Lista de mapas</b><span class="grow"></span><button class="btn soft sm" data-act="mlSync">Sincronizar</button><button class="btn pri sm" data-act="mlAdd">Añadir</button></div>
+  <div class="mlg grow">${maps.map(card).join("")}</div></div>`;
+},
+mapWiz(){return WIZARD();},
 mapTool(){return MAPTOOL();}
 };
 function svgS(k){return `<svg viewBox="0 0 24 24" style="width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round">${I[k]}</svg>`;}
@@ -1212,54 +1463,76 @@ const rng=(key,min,max,step,f)=>`<input type="range" data-set="${key}" min="${mi
 const FMT={ms:v=>(+v).toFixed(1)+" m/s",pct:v=>Math.round(v*100)+" %",p:v=>v+" %",s:v=>v+" s",mm:v=>v+" mm"};
 const FMTK={brightness:FMT.pct,volume:FMT.pct,lowBat:FMT.p,replanTime:FMT.s,lockTime:FMT.s,rearOut:FMT.mm,totalW:FMT.mm,cruiseWait:FMT.s,callArriveTime:FMT.s};
 const box=(h)=>`<div class="box">${h}</div>`;
+const rad=(key,val,t,sub2,extra)=>`<div class="it rad ${String(S[key])===String(val)?"on":""}" data-act="setv" data-arg="${key}|${val}" role="radio" tabindex="0" aria-checked="${String(S[key])===String(val)}"><span class="rb"></span><span class="t">${t}${sub2?`<small>${sub2}</small>`:""}</span>${extra||""}</div>`;
+const expBtn=k=>`<button class="exp" data-act="toggleExp" data-arg="${k}">${ui.exp[k]?"Contraer ⌃":"Expandir ⌄"}</button>`;
+const swPlay=k=>`<button class="sw2 ${S[k]!=="off"?"on":""}" data-act="togPlay" data-arg="${k}" aria-label="Interruptor"></button>`;
+const tabsPlay=k=>`<div class="seg2"><button class="${S[k]==="voice"?"on":""}" data-act="setv" data-arg="${k}|voice">Síntesis de voz${S[k]==="voice"?" ✓":""}</button><button class="${S[k]==="music"?"on":""}" data-act="setv" data-arg="${k}|music">Música${S[k]==="music"?" ✓":""}</button></div>`;
+function phrasesBox(){
+  return `<div class="phb"><div class="inline"><button class="chk ${S.phraseLoop?"on":""}" data-tg="phraseLoop">${S.phraseLoop?"☑":"☐"} Reproducción en bucle</button>
+    <label class="small">Intervalo de ciclo <select data-set="phraseInt">${[5,10,20,30].map(v=>`<option value="${v}" ${S.phraseInt===v?"selected":""}>${v}s</option>`).join("")}</select></label>
+    <button class="btn soft" data-act="addPhrase">Agregar voz +</button></div>
+    ${S.phrases.map((t,i)=>`<div class="row"><button class="chk ${S.phraseOff.includes(t)?"":"on"}" data-act="togPhrase" data-arg="${i}" aria-label="Activar frase">${S.phraseOff.includes(t)?"☐":"☑"}</button><span class="t">${esc(t)}</span><button class="xx" data-act="editPhrase" data-arg="${i}" aria-label="Editar frase">✎</button><button class="xx play" data-act="playPhrase" data-arg="${i}" aria-label="Escuchar frase">▶</button></div>`).join("")||'<div class="small">No hay frases. Pulsa «Agregar voz +».</div>'}</div>`;
+}
 const grp=(t)=>`<div class="grp">${t}</div>`;
 const playOpts=[["off","Desactivado"],["voice","Voz sintetizada"],["music","Música"]];
 function retOpts(){const m=curMap();return [["","Punto de espera (por defecto)"],...m.points.filter(p=>p.type!=="pass").map(p=>[p.id,p.name])];}
 function quickOpts(){return [["none","Ninguna acción"],["complete","Completar la tarea actual"]];}
-const SIDE=[["general","General","#8a93a6"],["func","Funciones del robot","#2a6af6"],["map","Ajustes de mapa","#1fae58"],["music","Música","#e9a114"],["pwd","Contraseña y seguridad","#7a5bd6"],["update","Actualización del sistema","#1aa3c9"],["debug","Depuración","#555d6b"]];
+const SIDE=[["general","General","#4aa3ff"],["func","Funciones del robot","#3b82f6"],["map","Ajustes de mapa","#22c55e"],["music","Música","#f59e0b"],["pwd","Contraseña y seguridad","#8b5cf6"],["update","Actualización del sistema","#06b6d4"],["about","Acerca del dispositivo","#f97316"],["debug","Depurar","#64748b"]];
 function SETTINGS(){
   const st=ui.set;
-  return `<div class="set"><div class="side"><button class="x" data-act="setClose">✕ Ajustes</button>${SIDE.map(([k,l,c])=>`<button class="si ${st.tab===k?"on":""}" data-act="setTab" data-arg="${k}"><span class="sq" style="background:${c}"></span>${l}</button>`).join("")}</div>
+  return `<div class="set"><div class="side"><button class="x" data-act="setClose">✕ Configuración</button>${SIDE.map(([k,l,c])=>`<button class="si ${st.tab===k?"on":""}" data-act="setTab" data-arg="${k}"><span class="sq" style="background:${c}"></span>${l}</button>`).join("")}</div>
   <div class="pane">${PANES[st.sub||st.tab]()}</div></div>`;
 }
-function sub(title,body){return `<div class="ph"><button class="bk" data-act="subBack">‹ ${ui.set.back?"Volver":"Funciones del robot"}</button><span>${title}</span></div>${body}`;}
+function sub(title,body){const bl=ui.set.back?"Regresar":({pwd:"Contraseña y seguridad",debug:"Depurar",map:"Ajustes de mapa"}[ui.set.tab]||"Funciones del robot");return `<div class="ph"><button class="bk" data-act="subBack">‹ ${bl}</button><span>${title}</span></div>${body}`;}
 function outlineInfo(){const W=S.totalW/1000,L=0.835+S.rearOut/1000;return `Ancho mínimo de paso ≈ ${(W+0.1).toFixed(2)} m · Ancho mínimo para girar en U ≈ ${(Math.hypot(L,W)+0.1).toFixed(2)} m`;}
 const PANES={
-general(){return grp("General")+box(
+general(){return box(
   it("Idioma","",sel("lang",[["es","Español"],["en","English (no simulado)"]]))+
-  it("WLAN",S.wlan?"Conectado a Aula-Robotica":"Desconectado",sw("wlan"))+
-  it("Tema","",sel("theme",[["light","Claro"],["dark","Oscuro"]]))+
-  it("Brillo","",rng("brightness",0.4,1,0.05,FMT.pct))+
+  it("Zona horaria","",'<span class="v">hora estándar de Europa central ›</span>'))+box(
+  it("WLAN",S.wlan?"":"Desconectado",`<span class="v">${S.wlan?"WiFi-Taller":""}</span>`+sw("wlan"))+
+  it("Bluetooth","",'<span class="v">Abrir ›</span>'))+
+  grp("Tema")+`<div class="themes">${[["light","Modo claro"],["dark","Modo oscuro"]].map(([k,l])=>`<button class="thc ${S.theme===k?"on":""}" data-act="setv" data-arg="theme|${k}"><span class="rbw"><span class="rb"></span>${l}</span><span class="thp ${k}">${Array.from({length:12},(_,i)=>`<i>${i+1}</i>`).join("")}</span></button>`).join("")}</div>`+
+  box(it("Brillo","",rng("brightness",0.4,1,0.05,FMT.pct))+
   it("Volumen","0 % silencia los avisos de voz",rng("volume",0,1,0.1,FMT.pct)));},
-func(){return grp("Ajustes de módulos")+box(nav2("Ajustes de módulos","Funciones de cada modo, incluidos los ajustes de Entrega, Crucero y Elevación","subGo","modules"))+
-  grp("Ajustes de funciones")+box(nav2("Llamadas","","subGo","call")+nav2("Ajustes de carga","","subGo","charge")+nav2("Ajustes de retorno","","subGo","ret")+nav2("Ajustes de bandejas","","subGo","tray",S.trays+" zona"+(S.trays>1?"s":""))+nav2("Visualización y entrada de destinos","","subGo","dest")+nav2("Ajustes de funcionamiento","","subGo","run"))+
-  grp("Ajustes de interacción")+box(nav2("Emoticonos","","subGo","emo")+nav2("Interacción por voz","","subGo","voice"))+
-  grp("")+box(nav2("Ajustes avanzados","","subGo","adv"));},
-modules(){return sub("Ajustes de módulos",box(nav2("Modo entrega","","subGo","mod_delivery")+nav2("Modo crucero","","subGo","mod_cruise")+nav2("Modo elevación",S.model==="lift"?"":"Solo modelo WTIDL1","subGo","mod_lift")+it("Modo rodillos","Necesita el accesorio PUDU Conveyor","",'dis')));},
-mod_delivery(){return sub("Modo entrega",box(
+func(){return box(nav2("Configuración del módulo","Configuraciones detalladas de cada modo, incluyendo voz, música y configuración de escena","subGo","modules"))+
+  grp("Configuración")+box(nav2("Función de seguimiento","","subGo","followCfg",S.followEnabled?'<span class="hab">Habilitado</span>':"Deshabilitado")+nav2("Función de llamada","","subGo","call")+nav2("Plan de trabajo","","subGo","plan")+nav2("Configuración de carga","","subGo","charge")+nav2("Configuración devolución","","subGo","ret")+nav2("Ajustes de bandejas","","subGo","tray",S.trays+" zona"+(S.trays>1?"s":""))+nav2("Visualización y entrada de destinos","","subGo","dest")+nav2("Ajustes de funcionamiento","","subGo","run"))+
+  grp("Interacción")+box(nav2("Emoticonos","","subGo","emo")+nav2("Interacción por voz","","subGo","voice"))+
+  box(nav2("Ajustes avanzados","","subGo","adv"));},
+followCfg(){return sub("Función de seguimiento",box(it("Función de seguimiento","Pulsa uno de los botones azules de los lados de la pantalla y el robot te seguirá",sw("followEnabled"))));},
+plan(){return sub("Plan de trabajo",`<div class="note">Sirve para programar tareas por días y horas, para que el robot las haga solo. En el simulador no está disponible.</div>`);},
+modules(){return sub("Configuración del módulo",box(nav2("Modo entrega","","subGo","mod_delivery")+nav2("Modo crucero","","subGo","mod_cruise")+nav2("Modo elevación",S.model==="lift"?"":"Solo modelo WTIDL1","subGo","mod_lift")+it("Modo rodillos","Necesita el accesorio PUDU Conveyor","",'dis')));},
+mod_delivery(){return sub("Configuración de entrega",box(
   it("Prioridad de destino","Con varias tareas",sel("priority",[["dist","Prioridad por distancia"],["order","Prioridad por orden"]]))+
   it("Autocompletar al llegar","Si nadie toca, se va al acabar la cuenta atrás",sel("autoDone",[[0,"Desactivado"],[10,"10 s"],[30,"30 s"],[60,"60 s"]]))+
   it("Al terminar la entrega, volver a","",sel("delReturn",retOpts()))+
-  it("Botón de función personalizado","Qué hace el botón rápido",sel("quickDel",quickOpts()))+
-  it("Reproducir durante la tarea","",sel("playTask",playOpts))+
-  it("Reproducir al llegar","",sel("playArrive",playOpts))+
-  it("Varios destinos por bandeja","Una zona de carga puede ir a varios puntos",sw("multiPoint"))+
-  it("Velocidad de entrega","",rng("vDel",0.2,1.2,0.1,FMT.ms))));},
-mod_cruise(){return sub("Modo crucero",box(
-  it("Al llegar a una parada","",sel("cruiseStop",[["stay","Quedarse"],["go","Seguir sin parar"],["wait","Tiempo de parada"]]))+
-  (S.cruiseStop==="wait"?it("Tiempo de parada","",rng("cruiseWait",5,60,5,FMT.s)):"")+
-  it("Al terminar el crucero, volver a","",sel("cruiseReturn",retOpts()))+
-  it("Botón de función personalizado","",sel("quickCruise",quickOpts()))+
-  it("Reproducir durante la tarea","",sel("playTask",playOpts))+
-  it("Reproducir al llegar","",sel("playArrive",playOpts))+
-  it("Velocidad de crucero","",rng("vCruise",0.2,1.2,0.1,FMT.ms))));},
-mod_lift(){return sub("Modo elevación",(S.model==="lift"?"":`<div class="warnb">Este modelo no tiene elevador. Cambia el modelo arriba del plano para probarlo.</div>`)+box(
-  it("Reproducir durante la tarea","",sel("playTask",playOpts))+
-  it("Reproducir al llegar","",sel("playArrive",playOpts))+
+  it("Botón de función personalizada","Qué hace el botón de la cabeza del robot",sel("quickDel",quickOpts()))+
+  it("Varios destinos por bandeja","Una zona de carga puede ir a varios puntos",sw("multiPoint")))+
+  grp("Música/Voz")+box(
+  it("Reproducir en el camino","El robot puede reproducir audio o música en el camino. Elija el contenido a reproducir",swPlay("playTask"))+(S.playTask!=="off"?`<div class="it sub2">${tabsPlay("playTask")}</div>${S.playTask==="voice"?phrasesBox():""}`:"")+
+  it("Reproducir al llegar","Puede reproducir voz o música al llegar el robot",swPlay("playArrive"))+(S.playArrive!=="off"?`<div class="it sub2">${tabsPlay("playArrive")}</div>`:""))+
+  box(it("Velocidad de entrega","0,2–1,2 m/s",rng("vDel",0.2,1.2,0.1,FMT.ms))));},
+mod_cruise(){return sub("Configuración de crucero",
+  grp("Al llegar a un punto de parada")+box(
+    rad("cruiseStop","stay","Quedarse","El robot espera en el punto hasta que se pulse «Continuar»")+
+    rad("cruiseStop","go","No parar","No se detiene en los puntos de parada")+
+    rad("cruiseStop","wait","Tiempo de permanencia (1-600s)","Al llegar a un punto intermedio de la ruta, permanece el tiempo indicado y luego sigue navegando",`<input type="number" class="num" data-num="cruiseWait" min="1" max="600" value="${S.cruiseWait}" aria-label="Segundos de permanencia">`))+
+  grp("Crucero completado, volviendo a la posición")+box(
+    it("Volver a","Una vez que el robot complete la tarea de patrullaje, regresará a la ubicación establecida",`<span class="v">${esc((retOpts().find(o=>o[0]===S.cruiseReturn)||retOpts()[0])[1])}</span>`)+
+    `<div class="it sub2">${expBtn("crRet")}</div>`+(ui.exp.crRet?retOpts().map(([v,l])=>rad("cruiseReturn",v,esc(l))).join(""):""))+
+  grp("Botón de función personalizada")+box(
+    rad("quickCruise","none","Sin acción","Presiona el botón personalizado en la cabeza del robot, no ejecuta ninguna acción")+
+    rad("quickCruise","complete","Completar tarea actual","Presiona el botón personalizado en la cabeza del robot para completar la tarea actual"))+
+  grp("Música/Voz")+box(
+    it("Reproducir en el camino","El robot puede reproducir audio o música en el camino. Elija el contenido a reproducir",swPlay("playTask"))+(S.playTask!=="off"?`<div class="it sub2">${tabsPlay("playTask")}${expBtn("crVoice")}</div>${S.playTask==="voice"&&ui.exp.crVoice?phrasesBox():""}`:"")+
+    it("Reproducir al llegar","Puede reproducir voz o música al llegar el robot. Seleccione el contenido a reproducir",swPlay("playArrive"))+(S.playArrive!=="off"?`<div class="it sub2">${tabsPlay("playArrive")}</div>`:""))+
+  box(it("Velocidad de crucero","0,2–1,2 m/s",rng("vCruise",0.2,1.2,0.1,FMT.ms))));},
+mod_lift(){return sub("Configuración de elevación",(S.model==="lift"?"":`<div class="warnb">Este modelo no tiene elevador. Cambia el modelo en el panel Plano para probarlo.</div>`)+box(
+  it("Reproducir en el camino","",swPlay("playTask"))+
+  it("Reproducir al llegar","",swPlay("playArrive"))+
   it("Al terminar, volver a","",sel("liftReturn",retOpts()))+
   it("Método de llegada","Marcha atrás: para sitios estrechos o contra la pared",sel("arrival",[["direct","Llegada directa"],["back","Marcha atrás"]]))+
   it("Velocidad","",rng("vLift",0.2,1.2,0.1,FMT.ms))));},
-call(){return sub("Llamadas",box(
+call(){return sub("Función de llamada",box(
   it("Activar llamadas","El robot responde a llamadas remotas",sw("callEnabled"))+
   it("Llamada por red","App pudulink, reloj 4G, interfaz abierta",sw("callNet"))+
   it("Buscapersonas PUDU","Configuración con el soporte técnico","",'dis')+
@@ -1268,9 +1541,9 @@ call(){return sub("Llamadas",box(
   (S.callArriveWait?it("Tiempo de espera","",rng("callArriveTime",10,120,10,FMT.s)):"")+
   it("Al terminar, volver","",sw("callReturn"))+
   it("Llamable durante la carga","Si la batería está por encima del valor seguro",sw("callableCharging")))+
-  `<div class="note">Para probarlo, elige un punto en «Llamar desde» encima del plano y pulsa Llamar.</div>`);},
+  `<div class="note">Para probarlo, elige un punto en «Llamar desde» (panel Plano) y pulsa Llamar.</div>`);},
 charge(){const m=curMap(),hasPile=ofType(m,"chg").length>0;
-  return sub("Ajustes de carga",hasPile?box(
+  return sub("Configuración de carga",hasPile?box(
   it("Recarga automática","Vuelve al cargador al cumplir las condiciones",sw("autoCharge"))+
   it("Umbral de batería baja","Con el robot libre durante 1 minuto",rng("lowBat",5,100,5,FMT.p))+
   it("Llamable durante la carga","",sw("callableCharging"))+
@@ -1278,7 +1551,7 @@ charge(){const m=curMap(),hasPile=ofType(m,"chg").length>0;
   it("Seleccionar cargador","",`<span class="v">${esc(ofType(m,"chg")[0].name)}</span>`)+
   it("Mantener en el cargador","Al llegar al 100 % se queda en el cargador",sw("maintainDock"))):
   box(it("Retorno por batería baja (5 %–50 %)","",rng("lowBat",5,50,5,FMT.p))+it("Seleccionar punto de carga","",'<span class="v">—</span>'))+`<div class="warnb">No hay cargador en el mapa. Añádelo en la herramienta de mapeo.</div>`);},
-ret(){return sub("Ajustes de retorno",box(it("Reproducir durante el retorno","",sel("playTask",playOpts))+it("Velocidad de retorno","",rng("vRet",0.2,1.2,0.1,FMT.ms))));},
+ret(){return sub("Configuración devolución",box(it("Reproducir durante la devolución","",swPlay("playTask"))+it("Velocidad de devolución","",rng("vRet",0.2,1.2,0.1,FMT.ms))));},
 tray(){return sub("Ajustes de bandejas",box(it("Zonas de carga","Útil al montar una bandeja o estructura",sel("trays",[[1,"1 zona"],[2,"2 zonas"],[3,"3 zonas"]])))+`<div class="robo" style="height:9em">${robotSVG([],Array.from({length:S.trays},(_,i)=>trayName(i)))}</div>`);},
 dest(){const m=curMap(),gs=groupsOf(m);return sub("Visualización y entrada de destinos",box(
   it("Columnas de destinos","",sel("columns",[[2,"2"],[3,"3"],[4,"4"]]))+
@@ -1297,18 +1570,25 @@ run(){return sub("Ajustes de funcionamiento",grp("Básico")+box(
 emo(){return sub("Emoticonos",box(it("Mostrar emoticonos","Los ojos en pantalla durante la marcha",sw("emoticons"))));},
 voice(){return sub("Interacción por voz",box(it("Voz del robot","",sel("voice",[["f","Voz femenina"],["m","Voz masculina"]]))+it("Paquetes de voz de la nube","Se configuran en la plataforma en la nube","",'dis')+it("Paquetes de voz locales","","<span class='v'>Predeterminado</span>")));},
 adv(){return sub("Ajustes avanzados",box(it("Mantener encendido al cambiar la batería","Al quitar la batería sigue encendido 60 s",sw("keepPower"))));},
-map(){const m=curMap();return `<div class="ph" style="justify-content:space-between"><span>Lista de mapas</span><button class="btn pri" data-act="newMap">+ Nuevo mapa</button></div>
-  <div class="mapgrid">${maps.map(mm=>`<div class="mcard ${mm.id===curMapId?"on":""}"><canvas data-thumb="${mm.id}" width="200" height="120" aria-label="Miniatura de ${esc(mm.name)}"></canvas>
-    <div class="mrow"><b>${esc(mm.name)}</b>${mm.id===curMapId?'<span class="tagu">En uso</span>':`<button class="btn soft" data-act="selMap" data-arg="${mm.id}">Usar</button>`}</div>
-    <div class="small">${mm.points.filter(p=>!p.auto&&p.type!=="pass").length} puntos · ${mm.vwalls.length} paredes virtuales</div></div>`).join("")}</div>`+
-  box(it("Punto de atraque (arranque)","",`<select data-dock>${m.points.filter(p=>p.type!=="pass").map(p=>`<option value="${p.id}" ${m.dock===p.id?"selected":""}>${esc(p.name)}</option>`).join("")}</select>`))+
-  `<div class="inline"><button class="btn pri" data-act="editMap">Editar el mapa en uso</button></div><div class="note">Al cambiar de mapa se sincronizan destinos y punto de atraque. El robot debe estar en el punto de arranque para localizarse.</div>`;},
-music(){return grp("Biblioteca de música")+box(it("Importar música","Conecta el móvil a la misma Wi-Fi que el robot y escanea el código",'<canvas class="qr" id="qr" width="21" height="21"></canvas>'))+grp(`Toda la música (${S.music.length}/20)`)+box(S.music.map((t,i)=>it(esc(t),"","<button class='btn soft' data-act='playMusic'>▶</button>")).join(""));},
-pwd(){return grp("Contraseña de administrador")+box(it("Contraseña",S.pwd?"Establecida (4 dígitos)":"Sin contraseña",`<button class="btn soft" data-act="pwdSet">${S.pwd?"Cambiar":"Establecer"}</button>${S.pwd?'<button class="btn soft" data-act="pwdClear">Quitar</button>':""}`))+
-  grp("Pedir contraseña para")+box(it("Cancelar tareas","",sw("pwdCancel",!S.pwd))+it("Salir de un modo","",sw("pwdExit",!S.pwd))+it("Entrar en ajustes","",sw("pwdSettings",!S.pwd))+it("Acceso directo de inicio","«Ir a» y «Cambiar»",sw("pwdHome",!S.pwd))+it("Apagar desde inicio","",sw("pwdShutdown",!S.pwd)))+
-  grp("Bloqueo del motor")+box(it("Bloquear el motor con la seta de emergencia","",sw("lockEstop"))+it("Bloquear el motor en reposo","Impide empujar el robot sin querer",sw("lockIdle")));},
-update(){return grp("Actualización del sistema")+box(it("Versión del software","T300 · simulador basado en la guía v1.1.0","<button class='btn pri' data-act='checkUpd'>Buscar actualización</button>"))+`<div class="note">La actualización necesita al menos un 20 % de batería y no se debe apagar el robot mientras se instala.</div>`;},
-debug(){return `<div class="warnb">La interfaz de depuración es solo para el soporte técnico. No la uses por tu cuenta.</div>`;}
+map(){return box(nav2("Editar mapa","Lista de mapas: crear, editar o borrar mapas","mapList")+`<button class="it newmap" data-act="newMap"><span class="t">+ Nuevo mapa<small>Abre el asistente para crear un mapa (en el robot: Editar mapa → Añadir)</small></span><span class="arr">›</span></button>`)+
+  grp("Selección de mapa")+box(maps.map(mm=>{const k="m_"+mm.id,on=mm.id===curMapId;
+    return `<div class="it rad ${on?"on":""}" data-act="selMap" data-arg="${mm.id}" role="radio" tabindex="0" aria-checked="${on}"><span class="rb"></span><span class="t">${esc(mm.name)}</span>${expBtn(k)}</div>`+
+    (ui.exp[k]?`<div class="it sub2"><span class="t">Punto de atraque<small>${mm.points.filter(p=>!p.auto&&p.type!=="pass").length} puntos · ${mm.vwalls.length} paredes virtuales</small></span><select data-dockm="${mm.id}" aria-label="Punto de atraque de ${esc(mm.name)}">${mm.points.filter(p=>p.type!=="pass").map(p=>`<option value="${p.id}" ${mm.dock===p.id?"selected":""}>${esc(p.name)}</option>`).join("")}</select></div>`:"");}).join(""))+
+  `<div class="note">Al cambiar de mapa se sincronizan destinos y punto de atraque. El robot debe estar en el punto de arranque para localizarse.</div>`;},
+music(){return `<div class="ph" style="justify-content:space-between"><span>Lista de música</span><button class="btn pri sm" data-act="importMusic">IMPORTAR MÚSICA</button></div>`+
+  box(S.music.map((t,i)=>`<div class="it"><span class="t">${esc(/\.\w{2,4}$/.test(t)?t:t+".mp3")}</span><button class="play" data-act="playMusic" aria-label="Escuchar">▶</button></div>`).join(""))+`<div class="note">${S.music.length} de 20 archivos. Formatos: MP3, WAV, FLAC, AAC y PCM.</div>`;},
+pwd(){return grp("Configuración de contraseña")+box(nav2("Contraseña de administración","El acceso se puede controlar por contraseña para cambiar la interfaz y los ajustes del robot","subGo","pwdAdmin",S.pwd?"Establecida":""))+
+  grp("Bloqueo del motor")+box(it("Bloqueo del motor al parar urgente","Bloquea el motor al pulsar la seta de emergencia, para evitar que el robot se deslice en una pendiente o lo empujen",sw("lockEstop"))+it("Bloquear motor en reposo","Bloquea el motor cuando el robot está inactivo, para que no se mueva sin querer",sw("lockIdle")));},
+pwdAdmin(){return sub("Contraseña de administración",box(it("Contraseña",S.pwd?"Establecida (4 dígitos)":"Sin contraseña",`<button class="btn soft" data-act="pwdSet">${S.pwd?"Cambiar":"Establecer"}</button>${S.pwd?'<button class="btn soft" data-act="pwdClear">Quitar</button>':""}`))+
+  grp("Pedir contraseña para")+box(it("Cancelar tareas","",sw("pwdCancel",!S.pwd))+it("Salir de un modo","",sw("pwdExit",!S.pwd))+it("Entrar en la configuración","",sw("pwdSettings",!S.pwd))+it("Acceso directo de inicio","«Ir a» y «Cambiar»",sw("pwdHome",!S.pwd))+it("Apagar desde inicio","",sw("pwdShutdown",!S.pwd))));},
+update(){return grp("Actualización de software del sistema")+box(`<button class="it" data-act="checkUpd"><span class="t">Verificar actualizaciones</span><span class="v">Versión actualizada</span></button>`+
+  it("Versión actual del software","Simulador T300 v3, basado en la guía de uso v1.1.0")+it("Versión actual del firmware","No disponible en el simulador"))+`<div class="note">Para actualizar hace falta al menos un 20 % de batería, y no se debe apagar el robot mientras se instala.</div>`;},
+about(){return grp("Guía de servicios")+`<div class="box qrs"><figure><canvas class="qr" data-seed="7" width="21" height="21" aria-hidden="true"></canvas><figcaption>Cuenta oficial</figcaption></figure><figure><canvas class="qr" data-seed="31" width="21" height="21" aria-hidden="true"></canvas><figcaption>Guía de usuario</figcaption></figure></div>`+
+  box(it("Línea directa de servicio nacional","Días laborables 9:00-21:00. El número aparece en el robot real")+it("Fabricado por","Shenzhen Pudu Technology Co., Ltd.")+it("Número de serie (SN)","No disponible en el simulador"))+`<div class="note">Los códigos QR de esta pantalla son decorativos.</div>`;},
+debug(){return box(nav2("Entrar en depuración","Configuración de parámetros relacionados con el robot. Para asegurar su funcionamiento, no los ajuste sin autorización.","debugEnter"));},
+debugInfo(){return sub("Depuración",`<div class="warnb">Esta zona es solo para el servicio técnico. En el simulador es de solo lectura.</div>`+
+  grp("Información del dispositivo")+box(it("Tipo de localización del mapa","LASER_VISUAL")+it("Batería",`${Math.round(R.battery)} % · ${nav?"MOVING":R.charging?"CHARGING":"IDLE"}`)+it("Posición",`x ${R.x.toFixed(2)} m · y ${R.y.toFixed(2)} m · θ ${Math.round(((R.th*180/Math.PI)+360)%360)}°`)+it("Mapa en uso",esc(curMap().name)))+
+  grp("Operación rápida")+box(it("Modo de depuración Wi-Fi","",'<button class="sw2" disabled aria-label="Interruptor"></button>',"dis")+it("Bloqueo de CPU","",'<button class="sw2" disabled aria-label="Interruptor"></button>',"dis")+it("Modo almacén","",'<button class="sw2" disabled aria-label="Interruptor"></button>',"dis")));}
 };
 
 /* ---------- Herramienta de mapeo ---------- */
@@ -1321,15 +1601,40 @@ function mtChecks(d){
   if(route){const {dist}=dijkstra(d,boot.id);route=named.every(p=>dist[p.id]<Infinity);}
   return {boot:!!(boot&&(boot.type==="boot"||d.dock===boot.id)),route};
 }
+function mtScanning(){const mt=ui.mt;return !!mt&&!mt.adding&&(mt.stage==="scan"||(mt.stage==="loop"&&mt.loopStep===0));}
+function snap(){const mt=ui.mt;if(!mt)return;const d=mt.draft;mt.undo.push({points:JSON.parse(JSON.stringify(d.points)),edges:JSON.parse(JSON.stringify(d.edges)),vwalls:JSON.parse(JSON.stringify(d.vwalls)),grid:d.grid.slice(),dock:d.dock});if(mt.undo.length>25)mt.undo.shift();}
 function recordRoute(force){
-  if(ui.screen!=="mapTool"||!ui.mt||ui.mt.stage!=="scan")return;
+  if(ui.screen!=="mapTool"||!ui.mt||!mtScanning())return;
   const mt=ui.mt,d=mt.draft,L=ptById(d,mt.last);
   if(!force&&L&&Math.hypot(L.x-R.x,L.y-R.y)<0.8)return;
+  if(L)mt.len=(mt.len||0)+Math.hypot(L.x-R.x,L.y-R.y);
   const id="r"+Date.now().toString(36)+Math.random().toString(36).slice(2,5);
   d.points.push({id,name:"",type:"pass",auto:true,x:+R.x.toFixed(2),y:+R.y.toFixed(2),group:""});
   if(L)d.edges.push([L.id,id]); mt.last=id;
 }
-const DPAD=`<div class="dpad mt-dpad" aria-label="Empujar el robot"><button class="u" data-drive="f" aria-label="Adelante">▲</button><button class="l" data-drive="l" aria-label="Girar a la izquierda">◀</button><span class="c">empujar</span><button class="r" data-drive="r" aria-label="Girar a la derecha">▶</button><button class="d" data-drive="b" aria-label="Atrás">▼</button></div>`;
+const MAP_METHODS=[["vslam","Trazado de VSLAM","Con la cámara superior (techo)"],["laser","Trazado de láser","Solo con los LiDAR: hay que empujar en bucle cerrado"],["vslaml","VSLAM+ láser","Cámara superior y LiDAR"],["hybrid","Trazado híbrido","Combina varias fuentes"],["lvm","Láser+VSLAM+Marcador","Con marcadores en el techo"],["marker","Trazado de Marker","Solo marcadores"]];
+const LOOP_METHODS=["laser","hybrid"];
+const WIZ_TIPS=[["Posicionamiento","Por favor, elija una ubicación con características obvias como punto de inicio para empezar a mapear."],["Registrar la orientación","Por favor, registre la posición del punto de inicio y la orientación del robot cuando empieza a mapear."],["Reduzca la velocidad","Durante el mapeo, empuje hacia adelante lentamente, y la velocidad no debe superar los 0.8m/s."]];
+function startWizard(){nav=null;job=null;R.v=0;ui.follow=null;ui.wiz={step:"type",type:"single",name:`Mapa ${maps.length+1}`,method:"vslaml",tip:0};ui.screen="mapWiz";renderScreen();}
+function WIZARD(){const w=ui.wiz;
+  const head=(t,back)=>`<div class="wzh"><button class="ib backb" data-act="${back}" aria-label="Volver">${svg("back")}</button><b>${t}</b></div>`;
+  if(w.step==="type")return `<div class="wz">${head("Seleccionar tipo de mapa","wizBack")}<div class="wzc2">
+    ${[["single","Planta única","El robot sólo se mueve en suelos fijos"],["multi","Varios pisos","El robot puede cooperar con el módulo de control del ascensor para realizar actividades entre pisos en el mismo edificio"]].map(([k,t,d])=>`<button class="wzo ${w.type===k?"on":""}" data-act="wizType" data-arg="${k}"><span class="rb"></span><b>${t}</b><small>${d}</small></button>`).join("")}</div>
+    <div class="small wzn">El tipo de mapa se puede cambiar en cualquier momento durante la edición posterior.${w.type==="multi"?" (En el simulador solo hay una planta.)":""}</div>
+    <div class="wzf"><button class="btn pri" data-act="wizNext">Siguiente »</button></div></div>`;
+  if(w.step==="name")return `<div class="wz">${head("Crear mapa","wizBack")}<div class="wzbox"><span class="small">Nombre del mapa</span><button class="wzin" data-act="wizName">${w.name?esc(w.name):'<span class="ph2">Por favor, introduzca el nombre del mapa</span>'}</button></div>
+    <div class="wzf"><button class="btn pri" data-act="wizNext" ${w.name.trim()?"":"disabled"}>Siguiente »</button></div></div>`;
+  if(w.step==="method")return `<div class="wz">${head("Seleccionar método de mapeo","wizBack")}<div class="wzg">
+    ${MAP_METHODS.map(([k,t,d])=>`<button class="wzo sm ${w.method===k?"on":""}" data-act="wizMethod" data-arg="${k}"><span class="rb"></span><b>${t}</b><small>${d}</small></button>`).join("")}</div>
+    <div class="small wzn">${LOOP_METHODS.includes(w.method)?"Con este método el mapa se construye empujando el robot en un bucle cerrado.":"Con este método se empuja el robot libremente por toda la zona."}</div>
+    <div class="wzf"><button class="btn pri" data-act="wizNext">Siguiente »</button></div></div>`;
+  const [tt,td]=WIZ_TIPS[w.tip];
+  return `<div class="wz">${head("Precauciones","wizBack")}<div class="wzban">Antes de empezar a construir un mapa, por favor lea las siguientes precauciones<button class="lnk" data-act="wizGo">Omitir</button></div>
+    <div class="wztip"><div class="wzill">${["📍","🧭","🐢"][w.tip]}</div><b>${tt}</b><p>${td}</p></div>
+    <div class="dots">${WIZ_TIPS.map((_,i)=>`<button class="${i===w.tip?"on":""}" data-act="wizTip" data-arg="${i}" aria-label="Precaución ${i+1}"></button>`).join("")}</div>
+    <div class="wzf">${w.tip<WIZ_TIPS.length-1?`<button class="btn soft" data-act="wizTip" data-arg="${w.tip+1}">Siguiente »</button>`:`<button class="btn pri" data-act="wizGo">Iniciar inmediatamente</button>`}</div></div>`;
+}
+const DPAD=`<div class="dpad mt-dpad" aria-label="Empujar el robot"><button class="u mv" data-drive="f" aria-label="Avanzar">▲<i>avanzar</i></button><button class="l turn" data-drive="l" aria-label="Girar a la izquierda">↺<i>girar</i></button><span class="c">empujar</span><button class="r turn" data-drive="r" aria-label="Girar a la derecha">↻<i>girar</i></button><button class="d mv" data-drive="b" aria-label="Retroceder">▼<i>atrás</i></button></div>`;
 const MT_MENU=[["point","Punto"],["route","Ruta"],["area","Área"],["group","Agrupar puntos"],["sched","Programación"],["noise","Borrar ruido"]];
 const MT_TOOLS={
 point(){const d=ui.mt.draft,named=d.points.filter(p=>!p.auto);
@@ -1352,29 +1657,44 @@ group(){const d=ui.mt.draft,ds=d.points.filter(isDest);
 sched(){return `<b>Programación</b><div class="small">La programación de tareas por horas no está simulada.</div>`;},
 noise(){return `<b>Borrar ruido</b><div class="small">Toca el mapa para borrar manchas que no son fijas: cajas o personas que había mientras escaneabas.</div>`;}
 };
+const LOOP_STEPS=["Iniciar Promoción","Construir Mapa","Movimiento Automático","Construir Mapa","complete"];
 function MAPTOOL(){
   const mt=ui.mt,d=mt.draft,a=mt.adding;
-  let h=`<div class="mtw"><canvas id="mini" class="mini" aria-label="Mapa en la pantalla del robot"></canvas>
-  <button class="ib backb mt-back" data-act="mtExit" aria-label="Salir">${svg("back")}</button>`;
-  if(mt.confirmExit)h+=`<div class="mt-banner warn">¿Salir sin guardar? Toca ‹ otra vez</div>`;
-  else if(a)h+=`<div class="mt-banner"><span class="rd"></span>Añadiendo punto: define sus atributos</div>`;
-  else if(mt.stage==="scan")h+=`<div class="mt-banner"><span class="gd"></span>Mapeando: empuja el robot por la zona · <span data-live="area"></span></div>`;
-  else h+=`<div class="mt-banner">${mt.tool?"Editando: "+MT_MENU.find(x=>x[0]===mt.tool)[1]:"Edita el mapa con el menú de la izquierda"}</div>`;
-  if(!a)h+=mt.stage==="scan"?`<button class="mt-green" data-act="mtEndScan">✓ Terminar escaneo</button>`:`<button class="mt-green" data-act="mtComplete">✓ Completar</button>`;
+  let h=`<div class="mtw ${mt.stage}"><canvas id="mini" class="mini" aria-label="Mapa en la pantalla del robot"></canvas>`;
+  const side=`<div class="mt-side"><button class="mt-ic" data-act="mtVoice" aria-label="Voz">🔊</button><button class="mt-ic" data-act="mtLocate" aria-label="Centrar en el robot">◎</button></div><div class="mt-scale">1m</div>`;
   if(a){
-    h+=`<div class="mt-types">${ADD_TYPES.map(t=>`<button class="mt-opt ${a.type===t?"on":""}" data-act="mtType" data-arg="${t}"><span class="rb"></span>${TYPE_LABEL[t]}</button>`).join("")}</div>
+    h+=`<button class="ib backb mt-back" data-act="mtCancelAdd" aria-label="Volver">${svg("back")}</button><div class="mt-banner"><span class="rd"></span>Añadiendo punto: define sus atributos</div>
+    <div class="mt-types">${ADD_TYPES.map(t=>`<button class="mt-opt ${a.type===t?"on":""}" data-act="mtType" data-arg="${t}"><span class="rb"></span>${TYPE_LABEL[t]}</button>`).join("")}</div>
     <div class="mt-card"><button class="it" data-act="mtName"><span class="t">Nombre del punto</span><span class="v lk">${esc(a.name)}</span></button>
     ${isDestT(a.type)?`<button class="it" data-act="mtGroup"><span class="t">Más ajustes<small>Grupo: ${esc(a.group||"ninguno")}</small></span><span class="arr">›</span></button>`:`<div class="it"><span class="t">Más ajustes</span><span class="arr">›</span></div>`}</div>
     <div class="mt-bot"><button class="btn pri big2" data-act="mtCancelAdd">Cancelar</button><button class="btn green big2" data-act="mtConfirmAdd">Configuración completada</button></div>`;
-  } else if(mt.stage==="scan"){
-    h+=`<div class="mt-bot"><button class="btn pri big2" data-act="mtAdd">+ Añadir punto</button><span class="mt-stat">${d.points.filter(p=>!p.auto).length} puntos · ${d.edges.length} tramos de ruta</span></div>${DPAD}`;
-  } else {
-    const c=mtChecks(d);
-    h+=`<div class="mt-menu">${MT_MENU.map(([k,l])=>`<button class="mt-mi ${mt.tool===k?"on":""}" data-act="mtTool" data-arg="${k}">${l}<span>›</span></button>`).join("")}<button class="mt-mi" data-act="mtRescan">Seguir escaneando<span>›</span></button></div>
-    ${mt.tool?`<div class="mt-panel">${MT_TOOLS[mt.tool]()}</div>`:""}
-    <div class="mt-checks"><div class="${c.boot?"ok":"no"}">${c.boot?"✓":"✗"} Punto de arranque</div><div class="${c.route?"ok":"no"}">${c.route?"✓":"✗"} Ruta topológica</div></div>
-    ${mt.tool==="point"?DPAD.replace('mt-dpad','mt-dpad up'):""}`;
+    return h+`</div>`;
   }
+  if(mt.stage==="loop"){
+    const st=mt.loopStep,secs=Math.floor((simT-(mt.t0||simT)));
+    h+=`<div class="mt-top"><button class="lnk" data-act="mtExit">‹ ${mt.confirmExit?"¿Salir? Pulsa otra vez":"cancelar"}</button>
+      <div class="mt-steps">${LOOP_STEPS.map((t,i)=>`<span class="${i<st?"done":i===st?"cur":""}"><i>${i<st?"✓":i+1}</i>${t}</span>`).join('<em>→</em>')}</div></div>`;
+    if(st===0)h+=`<div class="mt-red">• Mantenga el tiempo de empuje bajo 2 minutos; la ruta necesita ser un bucle cerrado. <span data-live="loop"></span></div>${side}
+      <div class="mt-bar c"><button class="btn red big2" data-act="mtLoopEnd">Finalizar Promoción</button></div>${DPAD}`;
+    else h+=`<div class="mt-wait"><div class="spin"></div><div>${st===2?"El robot repite la ruta automáticamente…":"cargando..."}</div></div>`;
+    return h+`</div>`;
+  }
+  if(mt.stage==="scan"){
+    h+=`<button class="ib backb mt-back" data-act="mtExit" aria-label="Salir">${svg("back")}</button>`;
+    h+=mt.confirmExit?`<div class="mt-red">¿Salir sin guardar el mapa? Toca ‹ otra vez</div>`:`<div class="mt-red">• Mapeado en curso, por favor empuje lentamente el robot para completar el mapeado. <span data-live="area"></span></div>`;
+    h+=side+`<div class="mt-bar"><button class="tgl ${mt.cam?"on":""}" data-act="mtCam"><span class="sw2 ${mt.cam?"on":""}"></span>Cámara superior</button><span class="grow"></span>
+      <button class="btn soft" data-act="mtAdd">+ Añadir punto</button><button class="btn soft" data-act="mtQuickDest">Añadir destino</button><button class="btn pri" data-act="mtFinish">Finalizar mapeo</button></div>${DPAD}`;
+    return h+`</div>`;
+  }
+  const c=mtChecks(d);
+  h+=`<button class="ib backb mt-back" data-act="mtExit" aria-label="Salir">${svg("back")}</button><button class="mt-tools ${mt.menu?"on":""}" data-act="mtMenu">☰ Herramientas</button>`;
+  if(mt.confirmExit)h+=`<div class="mt-banner warn">¿Descartar los cambios? Pulsa otra vez</div>`;
+  else if(mt.tool)h+=`<div class="mt-banner">Editando: ${MT_MENU.find(x=>x[0]===mt.tool)[1]}</div>`;
+  h+=`<div class="mt-checks"><div class="${c.boot?"ok":"no"}">${c.boot?"✓":"✗"} Punto de arranque</div><div class="${c.route?"ok":"no"}">${c.route?"✓":"✗"} Ruta topológica</div></div>`;
+  if(mt.menu)h+=`<div class="mt-menu">${MT_MENU.map(([k,l])=>`<button class="mt-mi ${mt.tool===k?"on":""}" data-act="mtTool" data-arg="${k}">${l}<span>›</span></button>`).join("")}<button class="mt-mi" data-act="mtRescan">Seguir escaneando<span>›</span></button></div>`;
+  if(mt.tool)h+=`<div class="mt-panel ${mt.menu?"":"left"}">${MT_TOOLS[mt.tool]()}</div>`;
+  h+=side.replace('mt-side','mt-side up')+`<div class="mt-bar"><button class="btn txt red" data-act="mtExit">Descartar cambios</button><span class="grow"></span>
+    <button class="btn soft" data-act="mtUndo" ${mt.undo.length?"":"disabled"}>↶ deshacer</button><button class="btn soft" data-act="mtAdd">+ Añadir punto</button><button class="btn green" data-act="mtComplete">complete</button></div>${DPAD.replace('mt-dpad','mt-dpad up')}`;
   return h+`</div>`;
 }
 /* Mapa dentro de la pantalla del robot */
@@ -1384,10 +1704,16 @@ function drawMini(){
   const r=mc.getBoundingClientRect();if(!r.width)return;const dp=window.devicePixelRatio||1;
   const W=Math.round(r.width*dp),H=Math.round(r.height*dp);if(mc.width!==W||mc.height!==H){mc.width=W;mc.height=H;}
   const d=ui.mt.draft,g=d.grid,px=mimg.data;
-  for(let i=0;i<g.length;i++){const c=g[i]===1?[248,249,251]:g[i]===2?[40,44,52]:[212,217,225];px[i*4]=c[0];px[i*4+1]=c[1];px[i*4+2]=c[2];px[i*4+3]=255;}
+  const scanC=ui.mt.stage!=="edit",F=scanC?[240,246,253]:[244,246,249],O=scanC?[30,136,255]:[96,104,118],U=scanC?[222,230,240]:[205,211,220];
+  for(let i=0;i<g.length;i++){const c=g[i]===1?F:g[i]===2?O:U;px[i*4]=c[0];px[i*4+1]=c[1];px[i*4+2]=c[2];px[i*4+3]=255;}
   mgcx.putImageData(mimg,0,0);
-  const s=Math.min(r.width/WW,r.height/WH),ox=(r.width-WW*s)/2,oy=(r.height-WH*s)/2;ui.mt.view={s,ox,oy};
-  const c=mc.getContext("2d");c.setTransform(1,0,0,1,0,0);c.fillStyle="#d4d9e1";c.fillRect(0,0,W,H);
+  // zona visible: sin el aviso de arriba ni la barra de abajo, para que el robot no quede tapado
+  const em=parseFloat(getComputedStyle(mc).fontSize)||14,T=ui.mt.adding?em*.6:em*3.1,Bm=ui.mt.adding?em*3.6:em*3.6,L=em*.6,Rr=em*.6;
+  const aw=Math.max(10,r.width-L-Rr),ah=Math.max(10,r.height-T-Bm),fit=Math.min(aw/WW,ah/WH);
+  let s,ox,oy;
+  s=fit;ox=L+(aw-WW*s)/2;oy=T+(ah-WH*s)/2; // mapa quieto y entero dentro de la zona visible
+  ui.mt.view={s,ox,oy};
+  const c=mc.getContext("2d");c.setTransform(1,0,0,1,0,0);c.fillStyle=scanC?"#dee6f0":"#cdd3dc";c.fillRect(0,0,W,H);
   c.setTransform(dp*s,0,0,dp*s,dp*ox,dp*oy);c.imageSmoothingEnabled=false;c.drawImage(mgcv,0,0,WW,WH);
   const q=1/s;
   c.strokeStyle="#e5484d";c.lineWidth=2.5*q;c.setLineDash([5*q,3*q]);d.vwalls.forEach(w=>{c.beginPath();c.moveTo(w[0],w[1]);c.lineTo(w[2],w[3]);c.stroke();});c.setLineDash([]);
@@ -1400,6 +1726,7 @@ function drawMini(){
     c.fillStyle=col;c.beginPath();c.arc(p.x,p.y,5*q,0,7);c.fill();c.strokeStyle="#fff";c.lineWidth=1.5*q;c.stroke();
     if(ui.mt.sel===p.id){c.strokeStyle="#3d6df5";c.lineWidth=2*q;c.beginPath();c.arc(p.x,p.y,9*q,0,7);c.stroke();}
     pill(p.x,p.y,p.name);});
+  if(ui.mt.stage==="loop"){const b=ptById(d,ui.mt.loopStart);if(b){c.strokeStyle="#e5484d";c.lineWidth=1.5*q;c.setLineDash([4*q,3*q]);c.beginPath();c.arc(b.x,b.y,1,0,7);c.stroke();c.setLineDash([]);}}
   // robot
   c.fillStyle="rgba(61,109,245,.25)";c.beginPath();c.arc(R.x,R.y,14*q,0,7);c.fill();
   c.fillStyle="#3d6df5";c.beginPath();c.arc(R.x,R.y,7*q,0,7);c.fill();c.strokeStyle="#fff";c.lineWidth=2*q;c.stroke();
@@ -1414,20 +1741,23 @@ function MODAL(){
   if(md.type==="pwd")return `<div class="modal"><div class="dlg"><h3>${md.mode==="set"?"Nueva contraseña de 4 dígitos":"Introduce la contraseña de administrador"}</h3>
     <div class="pdots">${[0,1,2,3].map(i=>`<i class="${md.val.length>i?"f":""}"></i>`).join("")}</div>
     <div class="keys">${[1,2,3,4,5,6,7,8,9].map(n=>`<button data-act="key" data-arg="${n}">${n}</button>`).join("")}<button data-act="closeModal" style="font-size:.85em">Cancelar</button><button data-act="key" data-arg="0">0</button><button data-act="key" data-arg="del" aria-label="Borrar">⌫</button></div></div></div>`;
-  if(md.type==="saving")return `<div class="modal"><div class="dlg" style="align-items:center;width:auto;padding:1.4em 2.4em"><div class="spin"></div><div>Guardando, espera…</div></div></div>`;
+  if(md.type==="qrmusic")return `<div class="modal"><div class="dlg"><h3>Importar música<button class="xx" data-act="closeModal" aria-label="Cerrar">✕</button></h3><div class="inline" style="justify-content:center"><canvas class="qr" data-seed="11" width="21" height="21" aria-hidden="true"></canvas></div><div class="small" style="text-align:center">Conecta el móvil a la misma Wi-Fi que el robot y escanea el código. En el simulador el código es decorativo.</div></div></div>`;
+  if(md.type==="saving")return`<div class="modal"><div class="dlg" style="align-items:center;width:auto;padding:1.4em 2.4em"><div class="spin"></div><div>${esc(md.text||"Guardando, espera…")}</div></div></div>`;
+  if(md.type==="savingOld")return `<div class="modal"><div class="dlg" style="align-items:center;width:auto;padding:1.4em 2.4em"><div class="spin"></div><div>Guardando, espera…</div></div></div>`;
   if(md.type==="name")return `<div class="modal"><div class="dlg"><h3>${esc(md.title)}<button class="xx" data-act="closeModal" aria-label="Cerrar">✕</button></h3><div class="inline"><input type="text" id="nmIn" value="${esc(md.val||"")}" aria-label="${esc(md.title)}" style="flex:1;max-width:none;font-size:1.05em"><button class="btn pri" data-act="nmOk">Confirmar</button></div></div></div>`;
   if(md.type==="switch"){const m=curMap();return `<div class="modal"><div class="dlg"><h3>Acceso directo «Ir a»<button class="xx" data-act="closeModal" aria-label="Cerrar">✕</button></h3>${m.points.filter(p=>p.type!=="pass").map(p=>`<button class="opt ${ui.goTo===p.id?"on":""}" data-act="pickGo" data-arg="${p.id}"><span class="rb"></span><span class="t">${esc(p.name)}</span></button>`).join("")}</div></div>`;}
   if(md.type==="routeMode"){const c=ui.cr;return `<div class="modal"><div class="dlg"><h3>Modo de ruta<button class="xx" data-act="closeModal" aria-label="Cerrar">✕</button></h3>
-    <div class="opt ${c.type==="loop"?"on":""}" data-act="rmType" data-arg="loop" role="radio" tabindex="0"><span class="rb"></span><span class="t">Modo bucle<small>Al empezar, repite la ruta sin fin</small></span></div>
-    <div class="opt ${c.type==="time"?"on":""}" data-act="rmType" data-arg="time" role="radio" tabindex="0"><span class="rb"></span><span class="t">Crucero por duración<small>Termina cuando se acaba el tiempo</small></span><span class="stepper"><button data-act="rmVal" data-arg="-5" aria-label="Menos">−</button><span class="pv-pill">${Math.floor((c.type==="time"?c.val:60)/60)}h${(c.type==="time"?c.val:60)%60}min</span><button data-act="rmVal" data-arg="5" aria-label="Más">+</button></span></div>
-    <div class="opt ${c.type==="count"?"on":""}" data-act="rmType" data-arg="count" role="radio" tabindex="0"><span class="rb"></span><span class="t">Crucero por vueltas<small>Termina tras ${c.type==="count"?c.val:1} vueltas</small></span><span class="stepper"><button data-act="rmVal" data-arg="-1" aria-label="Menos">−</button><span>${c.type==="count"?c.val:1}</span><button data-act="rmVal" data-arg="1" aria-label="Más">+</button></span></div>
-    <button class="go" data-act="crSave" style="font-size:1.05em;align-self:center;padding:.5em 3em">Aceptar</button></div></div>`;}
+    <div class="opt ${c.type==="loop"?"on":""}" data-act="rmType" data-arg="loop" role="radio" tabindex="0"><span class="rb"></span><span class="t">Modo de ciclo<small>Después de iniciar la tarea, el robot recorrerá esta ruta en bucle infinito</small></span></div>
+    <div class="opt ${c.type==="time"?"on":""}" data-act="rmType" data-arg="time" role="radio" tabindex="0"><span class="rb"></span><span class="t">Cruzar por tiempo<small>El robot ejecuta la tarea según el tiempo establecido y termina automáticamente</small></span><span class="stepper"><button data-act="rmVal" data-arg="-5" aria-label="Menos">−</button><span class="pv-pill">${Math.floor((c.type==="time"?c.val:60)/60)}h${(c.type==="time"?c.val:60)%60}min</span><button data-act="rmVal" data-arg="5" aria-label="Más">+</button></span></div>
+    <div class="opt ${c.type==="count"?"on":""}" data-act="rmType" data-arg="count" role="radio" tabindex="0"><span class="rb"></span><span class="t">Crucero por número<small>Esta ruta finalizará la tarea de crucero tras ${c.type==="count"?c.val:1} ciclos</small></span><span class="stepper"><button data-act="rmVal" data-arg="-1" aria-label="Menos">−</button><span>${c.type==="count"?c.val:1}</span><button data-act="rmVal" data-arg="1" aria-label="Más">+</button></span></div>
+    <button class="go" data-act="rmOk" style="font-size:1.05em;align-self:center;padding:.5em 3em">Aceptar</button></div></div>`;}
   if(md.type==="favs"){const m=curMap();return `<div class="modal"><div class="dlg"><h3>Tareas guardadas<button class="xx" data-act="closeModal" aria-label="Cerrar">✕</button></h3>
     ${ui.favs.length?ui.favs.map((f,i)=>`<div class="opt"><span class="t">${f.from==="inplace"?"En el sitio":esc(ptById(m,f.from)?.name||"?")} → ${esc(ptById(m,f.to)?.name||"?")}</span><button class="btn soft" data-act="favDel" data-arg="${i}">Borrar</button><button class="btn pri" data-act="favApply" data-arg="${i}">Aplicar</button></div>`).join(""):'<div class="note">Aún no hay tareas guardadas.</div>'}
     <button class="btn soft" data-act="favAdd" ${ui.lift.from&&ui.lift.to?"":"disabled"}>☆ Guardar la tarea actual</button></div></div>`;}
   return "";
 }
 
+const LIGHT_SCREENS=["mapTool","mapWiz","mapList"];
 function renderScreen(){
   let inner;
   if(power==="off")inner=`<div class="offs"><span>Pantalla apagada</span><span>Pulsa el interruptor de encendido ⏻ de la base</span></div>`;
@@ -1436,14 +1766,14 @@ function renderScreen(){
     const body=SCREENS[ui.screen]();
     inner=`<div class="sb"><span>${ui.screen==="home"?"":esc(ui.screen==="mapTool"&&ui.mt?ui.mt.draft.name:curMap().name)}</span>${sbIcons()}</div><div class="body">${body}</div>${MODAL()}<div class="toast" data-live="toast" hidden></div>${estop?`<div class="ov"><b>Parada de emergencia</b><span>Gira la seta en sentido horario para liberarla (pulsa la seta roja otra vez).</span></div>`:""}`;
   }
-  scr.innerHTML=`<div class="scr ${S.theme==="dark"?"dark":""}">${inner}<div class="dim" style="opacity:${power==="on"?(1-S.brightness).toFixed(2):0}"></div></div>`;
+  scr.innerHTML=`<div class="scr ${S.theme==="dark"&&!LIGHT_SCREENS.includes(ui.screen)?"dark":""}">${inner}<div class="dim" style="opacity:${power==="on"?(1-S.brightness).toFixed(2):0}"></div></div>`;
   document.getElementById("estop").classList.toggle("on",estop);
   document.getElementById("map").classList.toggle("pick",obsMode||personMode||(ui.screen==="mapTool"&&["area","route","noise"].includes(ui.mt.tool)));
   scr.querySelectorAll("canvas[data-thumb]").forEach(cv2=>{const mm=maps.find(x=>x.id===cv2.dataset.thumb);if(!mm)return;const c2=cv2.getContext("2d"),im=c2.createImageData(GW,GH);
     for(let i=0;i<mm.grid.length;i++){const v=mm.grid[i],col=v===1?[248,249,251]:v===2?[40,44,52]:[212,217,225];im.data[i*4]=col[0];im.data[i*4+1]=col[1];im.data[i*4+2]=col[2];im.data[i*4+3]=255;}
     c2.putImageData(im,0,0);c2.strokeStyle="#3d6df5";c2.lineWidth=1.5;c2.beginPath();mm.edges.forEach(([a,b])=>{const A=ptById(mm,a),B=ptById(mm,b);if(A&&B){c2.moveTo(A.x*10,A.y*10);c2.lineTo(B.x*10,B.y*10);}});c2.stroke();
     mm.points.forEach(q=>{if(q.auto||q.type==="pass")return;c2.fillStyle={dest:"#1f9d6a",pickup:"#1f9d6a",boot:"#2c5bb0",wait:"#2c5bb0",chg:"#d1780f"}[q.type]||"#6b7685";c2.beginPath();c2.arc(q.x*10,q.y*10,3,0,7);c2.fill();});});
-  const qr=document.getElementById("qr");if(qr){const c=qr.getContext("2d");c.fillStyle="#fff";c.fillRect(0,0,21,21);c.fillStyle="#111";let s=7;for(let y=0;y<21;y++)for(let x=0;x<21;x++){s=(s*9301+49297)%233280;const fin=(a,b)=>x>=a&&x<a+7&&y>=b&&y<b+7;if(fin(0,0)||fin(14,0)||fin(0,14)){const lx=x%7===0||x%7===6,ly=y%7===0||y%7===6,cx=(x%7>=2&&x%7<=4&&y%7>=2&&y%7<=4);if(lx||ly||cx)c.fillRect(x,y,1,1);}else if(s/233280<0.45)c.fillRect(x,y,1,1);}}
+  scr.querySelectorAll("canvas.qr").forEach(qr=>{const c=qr.getContext("2d");c.fillStyle="#fff";c.fillRect(0,0,21,21);c.fillStyle="#111";let s=+(qr.dataset.seed||7);for(let y=0;y<21;y++)for(let x=0;x<21;x++){s=(s*9301+49297)%233280;const fin=(a,b)=>x>=a&&x<a+7&&y>=b&&y<b+7;if(fin(0,0)||fin(14,0)||fin(0,14)){const lx=x%7===0||x%7===6,ly=y%7===0||y%7===6,cx=(x%7>=2&&x%7<=4&&y%7>=2&&y%7<=4);if(lx||ly||cx)c.fillRect(x,y,1,1);}else if(s/233280<0.45)c.fillRect(x,y,1,1);}});
   updateHw();updateLive();
 }
 function updateHandle(){
@@ -1464,13 +1794,14 @@ function updateHw(){
     obsMode?"Haz clic en el plano para poner o quitar cajas.":personMode?"Haz clic para colocar a la persona y arrástrala para moverla.":"";
 }
 function updateLive(){
+  {const e=document.querySelector('[data-live="loop"]');if(e&&ui.mt){const t=Math.floor(simT-ui.mt.t0);e.textContent=`· ${Math.floor(t/60)}:${String(t%60).padStart(2,"0")} · ${(ui.mt.len||0).toFixed(1)} m`;if(t>=120&&!ui.mt.warned2){ui.mt.warned2=true;toast("Han pasado 2 minutos: intenta cerrar el bucle.");}}}
   scr.querySelectorAll("[data-live]").forEach(el=>{
     switch(el.dataset.live){
       case"bat":{const b=Math.round(R.battery);el.querySelector("i").style.setProperty("--lvl",b+"%");el.querySelector("span").textContent=b+"%";el.classList.toggle("low",b<S.lowBat);el.classList.toggle("chg",R.charging);break;}
       case"clock":el.textContent=clock();break;
       case"banner":el.textContent=R.battery<=0?"Batería agotada":blocked?`Obstáculo detectado · esperando${S.replan?` (replanifica en ${Math.max(0,Math.ceil(S.replanTime-blockedT))} s)`:""}`:"";break;
       case"dist":el.textContent=nav?`Quedan ${remaining().toFixed(1)} m`:"";break;
-      case"pause":el.textContent=`Toca la pantalla para continuar · ${Math.max(0,Math.ceil(pauseLeft))} s`;break;
+      case"pause":el.textContent=`Toque la pantalla para continuar ${Math.max(0,Math.ceil(pauseLeft))}s`;break;
       case"arrive":el.textContent=(ui.screen==="arrived"?S.autoDone:S.callArriveWait)?`Se completa sola en ${Math.max(0,Math.ceil(arriveLeft))} s`:"";break;
       case"cwait":el.textContent=S.cruiseStop==="wait"?fmtT(Math.max(0,waitLeft)):"00:00";break;
       case"bigbat":el.textContent=Math.round(R.battery)+" %";break;
@@ -1500,22 +1831,28 @@ function checkSeg(m,A,B){
 function connect(a,b){const d=ui.mt.draft;if(a===b)return;
   if(d.edges.some(e=>(e[0]===a&&e[1]===b)||(e[0]===b&&e[1]===a))){toast("Esos puntos ya están unidos.");return;}
   const A=ptById(d,a),B=ptById(d,b),err=checkSeg(d,A,B);if(err){toast(`No se puede unir ${A.name} con ${B.name}: el camino ${err}.`);return;}
-  d.edges.push([a,b]);log(`Camino: ${A.name} — ${B.name}`);}
+  snap();d.edges.push([a,b]);log(`Camino: ${A.name} — ${B.name}`);}
 function pickPoint(id){const mt=ui.mt;if(!mt.sel)mt.sel=id;else{connect(mt.sel,id);mt.sel=null;}renderScreen();}
 function cloneMap(m){return {...m,grid:new Uint8Array(m.grid),points:m.points.map(p=>({...p})),edges:m.edges.map(e=>[...e]),vwalls:m.vwalls.map(w=>[...w]),cruises:m.cruises.map(c=>({...c,pts:[...c.pts]}))};}
-function startMapTool(edit){
-  nav=null;job=null;R.v=0;ui.follow=null;
-  const draft=edit?cloneMap(curMap()):{id:null,name:`Mapa ${maps.length+1}`,grid:new Uint8Array(GW*GH),points:[],edges:[],vwalls:[],cruises:[],dock:null};
-  ui.mt={stage:edit?"edit":"scan",tool:null,draft,sel:null,wallStart:null,adding:null,last:null,confirmExit:false,view:null};
-  ui.screen="mapTool";if(!edit)recordRoute(true);
-  log(edit?`Editando «${draft.name}»`:`Nuevo mapa «${draft.name}»: empuja el robot por la zona para escanearla`);renderScreen();
+function startMapTool(edit,opt){
+  nav=null;job=null;R.v=0;ui.follow=null;opt=opt||{};
+  const draft=edit?cloneMap(curMap()):{id:null,name:opt.name||`Mapa ${maps.length+1}`,world,grid:new Uint8Array(GW*GH),points:[],edges:[],vwalls:[],cruises:[],dock:null};
+  const loop=!edit&&LOOP_METHODS.includes(opt.method);
+  ui.mt={stage:edit?"edit":loop?"loop":"scan",loopStep:0,method:opt.method||null,tool:null,menu:false,undo:[],draft,sel:null,wallStart:null,adding:null,last:null,confirmExit:false,view:null,cam:true,len:0,t0:simT};
+  ui.screen="mapTool";
+  if(!edit){const id="u"+Date.now().toString(36);draft.points.push({id,name:"Ubicación de inicio 0",type:"boot",x:+R.x.toFixed(2),y:+R.y.toFixed(2),group:""});draft.dock=id;ui.mt.last=id;ui.mt.loopStart=id;}
+  log(edit?`Editando «${draft.name}»`:`Nuevo mapa «${draft.name}» (${(MAP_METHODS.find(m=>m[0]===opt.method)||[0,"—"])[1]}): empuja el robot por la zona`);renderScreen();
 }
+function loopAdvance(){const mt=ui.mt;if(!mt||mt.stage!=="loop")return;mt.loopStep++;
+  if(mt.loopStep>=4){mt.stage="edit";mt.menu=false;log("Mapa láser construido: revisa puntos, ruta y áreas");toast("Mapa construido. Ahora puedes editarlo.");renderScreen();return;}
+  renderScreen();const me=mt;setTimeout(()=>{if(ui.mt===me)loopAdvance();},mt.loopStep===2?2600:1600);}
 
 /* ================= Acciones ================= */
 function needPwd(flag,fn){if(S.pwd&&S[flag]){ui.modal={type:"pwd",mode:"check",val:"",then:fn};renderScreen();}else fn();}
 function openSettings(tab,subName,back){ui.set={tab:tab||"func",sub:subName||null,back:back||null};ui.screen="settings";renderScreen();}
 function startFollow(){
   if(power!=="on"||estop)return;
+  if(!S.followEnabled){toast("La función de seguimiento está deshabilitada (Configuración → Funciones del robot).");return;}
   if(job||nav){toast("Termina la tarea actual antes de usar el seguimiento.");return;}
   if(!["home","delivery","cruise","lifting"].includes(ui.screen))return;
   ui.follow={state:"search",dist:null,prev:ui.screen};ui.screen="follow";log("Seguimiento: buscando objetivo");speak("Buscando objetivo");renderScreen();
@@ -1528,7 +1865,9 @@ const ACT={
   followInfo(){toast("El seguimiento se activa con los botones azules de los lados de la pantalla.");},
   goFollow(){ui.drawer=false;toast("También se activa con los botones azules de los lados de la pantalla.");startFollow();},
   drawer(){ui.drawer=!ui.drawer;renderScreen();},
-  goAssist(){ui.drawer=false;if(!S.assist){toast("Activa antes «Modo asistido» en Ajustes → Funciones del robot → Ajustes de funcionamiento.");renderScreen();return;}if(job||nav){toast("Termina la tarea actual antes de usar el modo asistido.");renderScreen();return;}ui.screen="assist";renderScreen();},
+  spinRobot(){spinRobot();},
+  goVda(){ui.screen="vda";renderScreen();},
+  goAssist(){ui.drawer=false;if(!S.assist){toast("Activa antes «Modo asistido» en Configuración → Funciones del robot → Ajustes de funcionamiento.");renderScreen();return;}if(job||nav){toast("Termina la tarea actual antes de usar el modo asistido.");renderScreen();return;}ui.screen="assist";renderScreen();},
   assistLvl(k){ui.assist.level=k;renderScreen();},
   assistStart(){const A=ui.assist;A.on=true;const d=LVL.indexOf(A.level)-needLvl();
     log(`Modo asistido activado (nivel ${({low:"bajo",mid:"medio",high:"alto"})[A.level]}, carga ${S.load} kg)`);speak("Asistencia activada");
@@ -1567,11 +1906,16 @@ const ACT={
   cancelAll(){needPwd("pwdCancel",()=>{if(job)addHistory(MODE_LABEL[job.type]||"Tarea","—","Cancelada");ev("cancelled");nav=null;job=null;ui.paused=false;R.v=0;endSteadyOnce();ui.screen="home";log("Tareas canceladas","w");renderScreen();});},
   done(){doneArrived();},
   selCruise(a){ui.cruiseSel=a;renderScreen();},
-  newCruise(){const m=curMap();ui.cr={id:null,name:`Ruta ${m.cruises.length+1}`,type:"loop",val:1,pts:[]};ui.screen="cruiseEdit";renderScreen();},
-  editCruise(a){const c=curMap().cruises.find(c=>c.id===a);ui.cr={...c,pts:[...c.pts]};ui.screen="cruiseEdit";renderScreen();},
+  newCruise(){const m=curMap();ui.crPick=true;ui.cr={id:null,name:`Ruta ${m.cruises.length+1}`,type:"loop",val:1,pts:[]};ui.screen="cruiseEdit";renderScreen();},
+  editCruise(a){ui.crPick=false;const c=curMap().cruises.find(c=>c.id===a);ui.cr={...c,pts:[...c.pts]};ui.screen="cruiseEdit";renderScreen();},
   delCruise(a){const m=curMap();m.cruises=m.cruises.filter(c=>c.id!==a);if(ui.cruiseSel===a)ui.cruiseSel=m.cruises[0]?.id||null;renderScreen();},
   crAdd(a){if(ui.cr.pts[ui.cr.pts.length-1]!==a)ui.cr.pts.push(a);renderScreen();},
   crUndo(){ui.cr.pts.pop();renderScreen();},
+  crDel(i){ui.cr.pts.splice(+i,1);renderScreen();},
+  crUp(i){i=+i;if(i<1)return;const a=ui.cr.pts;[a[i-1],a[i]]=[a[i],a[i-1]];renderScreen();},
+  crPick(){ui.crPick=!ui.crPick;renderScreen();},
+  crRename(){const c=ui.cr;ui.modal={type:"name",title:"Nombre de la ruta",val:c.name,then:v=>{if(v.trim())c.name=v.trim().slice(0,30);}};renderScreen();},
+  rmOk(){ui.modal=null;renderScreen();},
   crNext(){ui.modal={type:"routeMode"};renderScreen();},
   rmType(a){ui.cr.type=a;ui.cr.val=a==="time"?60:1;renderScreen();},
   rmVal(a){const c=ui.cr,d=+a;if(c.type==="time")c.val=clamp(c.val+d,5,600);else if(c.type==="count")c.val=clamp(c.val+d,1,99);renderScreen();},
@@ -1592,15 +1936,32 @@ const ACT={
   colBack(){R.x-=Math.cos(R.th)*0.3;R.y-=Math.sin(R.th)*0.3;collided=null;nav=null;job=null;ui.screen="home";renderScreen();},
   showTruth(){setTruth(true);},
   setTab(a){ui.set={tab:a,sub:null,back:null};renderScreen();},
+  setv(a){const i=a.indexOf("|"),k=a.slice(0,i),v=a.slice(i+1);S[k]=(typeof S[k]==="number")?+v:v;renderScreen();},
+  togPlay(k){S[k]=S[k]==="off"?"voice":"off";renderScreen();},
+  toggleExp(k){ui.exp[k]=!ui.exp[k];renderScreen();},
+  addPhrase(){ui.modal={type:"name",title:"Nueva frase de voz",val:"",then:v=>{v=v.trim().slice(0,80);if(v&&!S.phrases.includes(v))S.phrases.push(v);}};renderScreen();},
+  editPhrase(i){const old=S.phrases[+i];ui.modal={type:"name",title:"Editar frase",val:old,then:v=>{v=v.trim().slice(0,80);if(!v){S.phrases.splice(+i,1);return;}S.phrases[+i]=v;const j=S.phraseOff.indexOf(old);if(j>=0)S.phraseOff[j]=v;}};renderScreen();},
+  togPhrase(i){const t=S.phrases[+i],j=S.phraseOff.indexOf(t);if(j>=0)S.phraseOff.splice(j,1);else S.phraseOff.push(t);renderScreen();},
+  playPhrase(i){speak(S.phrases[+i]);},
+  importMusic(){ui.modal={type:"qrmusic"};renderScreen();},
+  debugEnter(){ui.set.sub="debugInfo";log("Entrada en depuración (solo lectura)");renderScreen();},
+  mapList(){ui.mlMenu=null;ui.mlDel=null;ui.screen="mapList";renderScreen();},
+  mlBack(){openSettings("map");},
+  mlSync(){toast("Mapas sincronizados con la nube (simulado).");},
+  mlAdd(){startWizard();},
+  mlEdit(id){if(id!==curMapId){toast("Para editar este mapa, primero ponlo en uso: ⋯ → Usar.");return;}startMapTool(true);},
+  mlMore(id){ui.mlMenu=ui.mlMenu===id?null:id;ui.mlDel=null;renderScreen();},
+  mlUse(id){ui.mlMenu=null;ACT.selMap(id);renderScreen();},
+  mlDelete(id){if(id===curMapId){toast("No se puede borrar el mapa en uso.");return;}if(ui.mlDel!==id){ui.mlDel=id;toast("Pulsa «Borrar» otra vez para confirmar.");renderScreen();return;}const i=maps.findIndex(m=>m.id===id);const nm=maps[i].name;maps.splice(i,1);ui.mlMenu=null;ui.mlDel=null;log(`Mapa «${nm}» borrado`);renderScreen();},
   setClose(){ui.screen="home";renderScreen();},
   subGo(a){ui.set.sub=a;renderScreen();},
   subBack(){const b=ui.set.back;if(b){ui.screen=b;ui.set.back=null;ui.set.sub=null;renderScreen();return;}const s=ui.set.sub;ui.set.sub=s&&s.startsWith("mod_")?"modules":null;renderScreen();},
   selMap(a){
-    if(a===curMapId)return;curMapId=a;R.seg=null;locked=[];const w=dockPt(curMap());
+    if(a===curMapId){if(ui.screen==="settings")renderScreen();return;}curMapId=a;setWorld(curMap().world);R.seg=null;locked=[];const w=dockPt(curMap());
     if(w){R.x=w.x;R.y=w.y;R.th=0;R.node=w.id;localized=true;log(`Mapa «${curMap().name}» en uso; robot en el punto de atraque`);}else{R.node=null;localized=false;log(`Mapa «${curMap().name}» en uso, sin punto de atraque`,"w");}
     ui.goTo=w?w.id:null;fillCall();renderScreen();},
-  editMap(){startMapTool(true);},
-  newMap(){startMapTool(false);},
+  editMap(){ACT.mapList();},
+  newMap(){startWizard();},
   playMusic(){toast("Reproducción de muestra (simulada).");},
   pwdSet(){ui.modal={type:"pwd",mode:"set",val:""};renderScreen();},
   pwdClear(){needPwdForce(()=>{S.pwd=null;["pwdCancel","pwdExit","pwdSettings","pwdHome","pwdShutdown"].forEach(k=>S[k]=false);toast("Contraseña eliminada.");renderScreen();});},
@@ -1609,10 +1970,31 @@ const ACT={
       else if(md.val===S.pwd){const fn=md.then;ui.modal=null;renderScreen();fn&&fn();return;}else{md.val="";toast("Contraseña incorrecta.");}}
     renderScreen();},
   checkUpd(){if(R.battery<20){toast("Necesitas al menos un 20 % de batería para actualizar.");return;}toast("El sistema está actualizado.");},
+  wizBack(){const w=ui.wiz,o=["type","name","method","tips"],i=o.indexOf(w.step);if(i<=0){ui.wiz=null;ACT.mapList();return;}w.step=o[i-1];renderScreen();},
+  wizNext(){const w=ui.wiz,o=["type","name","method","tips"];if(w.step==="name"&&maps.some(m=>m.name===w.name.trim())){toast("Ya existe un mapa con ese nombre.");return;}w.step=o[o.indexOf(w.step)+1];w.tip=0;renderScreen();},
+  wizType(t){ui.wiz.type=t;renderScreen();},
+  wizMethod(m){ui.wiz.method=m;renderScreen();},
+  wizName(){const w=ui.wiz;ui.modal={type:"name",title:"Nombre del mapa",val:w.name,then:v=>{w.name=v.trim().slice(0,30);}};renderScreen();},
+  wizTip(i){ui.wiz.tip=+i;renderScreen();},
+  wizGo(){const w=ui.wiz;ui.wiz=null;startMapTool(false,{name:w.name.trim(),method:w.method});},
+  mtCam(){ui.mt.cam=!ui.mt.cam;toast(ui.mt.cam?"Cámara superior activada (en el simulador no cambia el mapa).":"Cámara superior desactivada.");renderScreen();},
+  mtVoice(){toast("Avisos de voz del mapeo: activados.");},
+  mtLocate(){toast("El mapa ya está centrado en el robot.");},
+  mtMenu(){const mt=ui.mt;mt.menu=!mt.menu;if(!mt.menu){mt.tool=null;mt.sel=null;mt.wallStart=null;mt.draw=false;}renderScreen();},
+  mtUndo(){const mt=ui.mt,u=mt.undo.pop();if(!u)return;const d=mt.draft;d.points=u.points;d.edges=u.edges;d.vwalls=u.vwalls;d.grid.set(u.grid);d.dock=u.dock;mt.sel=null;mt.wallStart=null;renderScreen();},
+  mtQuickDest(){const d=ui.mt.draft,c=d.grid[((R.y/CS)|0)*GW+((R.x/CS)|0)];if(c!==1){toast("Esta zona aún no está escaneada.");return;}
+    ui.mt.adding={type:"dest",name:defName("dest"),group:"",auto:true};ui.modal={type:"name",title:"Nombre del destino",val:ui.mt.adding.name,then:v=>{const a=ui.mt&&ui.mt.adding;if(!a)return;if(v.trim())a.name=v.trim();ACT.mtConfirmAdd();}};renderScreen();},
+  mtFinish(){const d=ui.mt.draft,ar=exploredArea(d.grid);if(ar<20){toast(`Mapa demasiado pequeño (${ar.toFixed(0)} m²). Empuja el robot por más zona.`);return;}
+    ui.modal={type:"saving",text:"Generando el mapa…"};renderScreen();const me=ui.mt;setTimeout(()=>{ui.modal=null;if(ui.mt===me){ACT.mtEndScan();}else renderScreen();},1400);},
+  mtLoopEnd(){const mt=ui.mt,d=mt.draft,b=ptById(d,mt.loopStart),dd=b?Math.hypot(b.x-R.x,b.y-R.y):99;
+    if((mt.len||0)<6){toast("La ruta es muy corta: empuja el robot dando una vuelta completa.");return;}
+    if(dd>1){toast(`El bucle no está cerrado: vuelve a menos de 1 m del inicio (ahora ${dd.toFixed(1)} m).`);return;}
+    recordRoute(true);const L=ptById(d,mt.last);if(L&&b&&L.id!==b.id)d.edges.push([L.id,b.id]);
+    log(`Bucle cerrado (${mt.len.toFixed(1)} m de recorrido)`);loopAdvance();},
   mtExit(){const mt=ui.mt;if(mt.adding){mt.adding=null;renderScreen();return;}if(!mt.confirmExit){mt.confirmExit=true;renderScreen();return;}ACT.mtDiscard();},
-  mtDiscard(){ui.mt=null;openSettings("map");log("Cambios del mapa descartados","w");},
-  mtEndScan(){const mt=ui.mt;mt.stage="edit";mt.tool=null;log("Escaneo terminado: ahora revisa puntos, ruta y áreas");renderScreen();},
-  mtRescan(){const mt=ui.mt;mt.stage="scan";mt.tool=null;mt.sel=null;mt.wallStart=null;let best=null,bd=1e9;mt.draft.points.forEach(p=>{const dd=Math.hypot(p.x-R.x,p.y-R.y);if(dd<bd){bd=dd;best=p}});mt.last=best&&bd<1.5?best.id:null;recordRoute(true);renderScreen();},
+  mtDiscard(){ui.mt=null;ACT.mapList();log("Cambios del mapa descartados","w");},
+  mtEndScan(){const mt=ui.mt;mt.stage="edit";mt.tool=null;mt.menu=false;log("Escaneo terminado: ahora revisa puntos, ruta y áreas");renderScreen();},
+  mtRescan(){const mt=ui.mt;mt.stage="scan";mt.tool=null;mt.menu=false;mt.sel=null;mt.wallStart=null;let best=null,bd=1e9;mt.draft.points.forEach(p=>{const dd=Math.hypot(p.x-R.x,p.y-R.y);if(dd<bd){bd=dd;best=p}});mt.last=best&&bd<1.5?best.id:null;recordRoute(true);renderScreen();},
   mtAdd(){const d=ui.mt.draft,c=d.grid[((R.y/CS)|0)*GW+((R.x/CS)|0)];if(c!==1){toast("Esta zona aún no está escaneada.");return;}ui.mt.adding={type:"dest",name:defName("dest"),group:"",auto:true};renderScreen();},
   mtType(t){const a=ui.mt.adding;a.type=t;if(a.auto)a.name=defName(t);renderScreen();},
   mtName(){const a=ui.mt.adding;ui.modal={type:"name",title:"Introduce el nombre",val:a.name,then:v=>{if(v.trim()){a.name=v.trim();a.auto=false;}}};renderScreen();},
@@ -1620,7 +2002,7 @@ const ACT={
   nmOk(){const md=ui.modal;ui.modal=null;md.then&&md.then(md.val||"");renderScreen();},
   mtCancelAdd(){ui.mt.adding=null;renderScreen();},
   mtConfirmAdd(){
-    const mt=ui.mt,d=mt.draft,a=mt.adding,t=a.type;
+    const mt=ui.mt,d=mt.draft,a=mt.adding,t=a.type;snap();
     if(["boot","wait","chg"].includes(t)){const old=ofType(d,t);if(old.length){d.points=d.points.filter(p=>p.type!==t);d.edges=d.edges.filter(e=>!old.some(o=>e.includes(o.id)));if(old.some(o=>o.id===mt.last))mt.last=null;toast(`Se sustituye el ${TYPE_LABEL[t].toLowerCase()} anterior.`);}}
     const id="u"+Date.now().toString(36)+Math.random().toString(36).slice(2,5);
     d.points.push({id,name:a.name,type:t,x:+R.x.toFixed(2),y:+R.y.toFixed(2),group:isDestT(t)?a.group:""});
@@ -1628,22 +2010,22 @@ const ACT={
     if(mt.stage==="scan"){const L=ptById(d,mt.last);if(L)d.edges.push([L.id,id]);mt.last=id;}
     else{let best=null,bd=4;d.points.forEach(p=>{if(p.id===id)return;const dd=Math.hypot(p.x-R.x,p.y-R.y);if(dd<bd&&!checkSeg(d,p,{x:R.x,y:R.y})){bd=dd;best=p}});if(best)d.edges.push([best.id,id]);else toast("Punto añadido sin conexión: únelo en Ruta.");}
     mt.adding=null;log(`${TYPE_LABEL[t]} «${a.name}» en (${R.x.toFixed(1)}, ${R.y.toFixed(1)})`);renderScreen();},
-  mtTool(k){const mt=ui.mt;mt.tool=mt.tool===k?null:k;mt.sel=null;mt.wallStart=null;mt.draw=false;renderScreen();},
+  mtTool(k){const mt=ui.mt;mt.menu=false;mt.tool=mt.tool===k?null:k;mt.sel=null;mt.wallStart=null;mt.draw=false;renderScreen();},
   mtDraw(){const mt=ui.mt;mt.draw=!mt.draw;mt.sel=null;renderScreen();},
   mtComplete(){const d=ui.mt.draft,c=mtChecks(d);
     if(!c.boot){toast("Falta el punto de arranque. Añádelo en Punto.");return;}
     if(!c.route)toast("Aviso: hay puntos sin conexión con el punto de arranque.");
-    ui.modal={type:"name",title:"Nombre del mapa",val:d.name,then:v=>{if(v.trim())d.name=v.trim();setTimeout(()=>{ui.modal={type:"saving"};renderScreen();setTimeout(()=>{ui.modal=null;if(ui.mt)ACT.saveMap();},1400);},0);}};renderScreen();},
-  delPt(a){const d=ui.mt.draft;d.points=d.points.filter(p=>p.id!==a);d.edges=d.edges.filter(e=>!e.includes(a));if(d.dock===a)d.dock=null;renderScreen();},
+    ui.modal={type:"saving",text:"Guardando el mapa…"};renderScreen();const me=ui.mt;setTimeout(()=>{ui.modal=null;if(ui.mt===me)ACT.saveMap();else renderScreen();},1400);},
+  delPt(a){snap();const d=ui.mt.draft;d.points=d.points.filter(p=>p.id!==a);d.edges=d.edges.filter(e=>!e.includes(a));if(d.dock===a)d.dock=null;renderScreen();},
   pickPt(a){pickPoint(a);},
-  delEdge(a){ui.mt.draft.edges.splice(+a,1);renderScreen();},
-  delWall(a){ui.mt.draft.vwalls.splice(+a,1);renderScreen();},
+  delEdge(a){snap();ui.mt.draft.edges.splice(+a,1);renderScreen();},
+  delWall(a){snap();ui.mt.draft.vwalls.splice(+a,1);renderScreen();},
   saveMap(){const d=ui.mt.draft;d.name=(d.name||"").trim()||`Mapa ${maps.length+1}`;
     d.cruises=d.cruises.map(c=>({...c,pts:c.pts.filter(id=>ptById(d,id))})).filter(c=>c.pts.length>=2);
     if(!ptById(d,d.dock))d.dock=(ofType(d,"boot")[0]||ofType(d,"wait")[0]||{}).id||null;
     if(d.id){const i=maps.findIndex(m=>m.id===d.id);maps[i]=d;}else{d.id="m"+Date.now();maps.push(d);}
     curMapId=d.id;R.seg=null;R.node=null;locked=[];d.points.forEach(p=>{if(Math.hypot(p.x-R.x,p.y-R.y)<0.3)R.node=p.id});
-    ev("mapSaved");localized=true;ui.goTo=(returnPt(d)||{}).id||d.dock;ui.mt=null;fillCall();log(`Mapa «${d.name}» guardado y en uso`);toast("Mapa guardado.");openSettings("map");}
+    ev("mapSaved");localized=true;ui.goTo=(returnPt(d)||{}).id||d.dock;ui.mt=null;fillCall();log(`Mapa «${d.name}» guardado y en uso`);toast("Mapa guardado.");ACT.mapList();}
 };
 function needPwdForce(fn){if(S.pwd){ui.modal={type:"pwd",mode:"check",val:"",then:fn};renderScreen();}else fn();}
 function inCone(p,maxD){const dx=p.x-R.x,dy=p.y-R.y,d=Math.hypot(dx,dy);return d>0.35&&d<=maxD&&Math.abs(angN(Math.atan2(dy,dx)-R.th))<=20*Math.PI/180;}
@@ -1678,7 +2060,7 @@ scr.addEventListener("pointerdown",e=>{
   if(e.target.id!=="mini"||!ui.mt||!ui.mt.draw||!ui.mt.view)return;e.preventDefault();
   const d=ui.mt.draft,[x,y]=miniWorld(e);let st=nearPt(d,x,y,0.6);
   if(!st){if(!freeAt(d,x,y)){toast("Empieza a dibujar sobre zona libre y escaneada.");return;}st=addStrokeNode(x,y);}
-  stroke={last:st,n:0,bad:false};try{e.target.setPointerCapture(e.pointerId)}catch(_){}
+  snap();stroke={last:st,n:0,bad:false};try{e.target.setPointerCapture(e.pointerId)}catch(_){}
 });
 scr.addEventListener("pointermove",e=>{
   if(!stroke||!ui.mt)return;const d=ui.mt.draft,[x,y]=miniWorld(e),L=stroke.last;
@@ -1714,7 +2096,8 @@ scr.addEventListener("change",e=>{
   const t=e.target;
   if(t.dataset.set&&t.tagName==="SELECT"){const v=t.value;S[t.dataset.set]=v!==""&&!isNaN(+v)?+v:v;if(t.dataset.set==="trays")ui.assign={};if(t.dataset.set==="lang"&&v==="en")toast("El simulador solo está en español.");renderScreen();}
   if(t.dataset.set&&t.type==="range")renderScreen();
-  if(t.hasAttribute("data-dock")){curMap().dock=t.value;ui.goTo=t.value;log(`Punto de atraque: ${ptById(curMap(),t.value).name}`);renderScreen();}
+  if(t.hasAttribute("data-dockm")){const mm=maps.find(x=>x.id===t.dataset.dockm);if(mm){mm.dock=t.value;if(mm.id===curMapId)ui.goTo=t.value;log(`Punto de atraque de «${mm.name}»: ${ptById(mm,t.value).name}`);}renderScreen();}
+  if(t.dataset.num){const v=clamp(Math.round(+t.value||1),1,600);S[t.dataset.num]=v;t.value=v;}
   if(t.hasAttribute("data-lg")){ui.lift.group=t.value;renderScreen();}
   if(t.id==="ptType"){ui.mt.ptType=t.value;renderScreen();}
 });
@@ -1795,10 +2178,10 @@ function draw(){
   cx.setTransform(dpr*k,0,0,dpr*k,0,0);cx.imageSmoothingEnabled=false;cx.drawImage(gcv,0,0,WW,WH);
   const px=1/k;
   cx.strokeStyle=P.line;cx.globalAlpha=.35;cx.lineWidth=px;cx.beginPath();for(let x=1;x<WW;x++){cx.moveTo(x,0);cx.lineTo(x,WH);}for(let y=1;y<WH;y++){cx.moveTo(0,y);cx.lineTo(WW,y);}cx.stroke();cx.globalAlpha=1;
-  if(showTruth){cx.setLineDash([4*px,3*px]);cx.strokeStyle=P.accent;cx.lineWidth=1.5*px;SOLIDS.forEach(r=>cx.strokeRect(r.x,r.y,r.w,r.h));cx.setLineDash([]);
+  if(showTruth&&world==="taller"){cx.setLineDash([4*px,3*px]);cx.strokeStyle=P.accent;cx.lineWidth=1.5*px;SOLIDS.forEach(r=>cx.strokeRect(r.x,r.y,r.w,r.h));cx.setLineDash([]);
     cx.fillStyle=P.glass;GLASS.forEach(r=>cx.fillRect(r.x-0.03,r.y,r.w+0.06,r.h));cx.font=`600 ${11*px}px "IBM Plex Sans", sans-serif`;cx.fillText("cristal",GLASS[0].x+0.15,GLASS[0].y+1.8);}
   obstacles.forEach(o=>{cx.fillStyle=P.obst;cx.fillRect(o.x-0.25,o.y-0.25,0.5,0.5);cx.strokeStyle=P.ink;cx.lineWidth=px;cx.beginPath();cx.moveTo(o.x-0.25,o.y-0.25);cx.lineTo(o.x+0.25,o.y+0.25);cx.moveTo(o.x+0.25,o.y-0.25);cx.lineTo(o.x-0.25,o.y+0.25);cx.stroke();});
-  racks.forEach(r=>{if(!r.carried)drawRack(r.x,r.y,0,px);});
+  if(world==="taller")racks.forEach(r=>{if(!r.carried)drawRack(r.x,r.y,0,px);});
   cx.strokeStyle=P.vwall;cx.lineWidth=4*px;cx.setLineDash([6*px,4*px]);m.vwalls.forEach(w=>{cx.beginPath();cx.moveTo(w[0],w[1]);cx.lineTo(w[2],w[3]);cx.stroke();});cx.setLineDash([]);
   if(ui.screen==="mapTool"&&ui.mt.wallStart){const s=ui.mt.wallStart;cx.fillStyle=P.vwall;cx.beginPath();cx.arc(s[0],s[1],5*px,0,7);cx.fill();if(hover){cx.strokeStyle=P.vwall;cx.globalAlpha=.5;cx.lineWidth=3*px;cx.beginPath();cx.moveTo(s[0],s[1]);cx.lineTo(hover[0],hover[1]);cx.stroke();cx.globalAlpha=1;}}
   cx.lineWidth=2*px;m.edges.forEach(([a,b])=>{const A=ptById(m,a),B=ptById(m,b);if(!A||!B)return;const lk=ui.screen!=="mapTool"&&isLocked(a,b);cx.strokeStyle=lk?P.danger:P.muted;cx.globalAlpha=lk?1:.7;if(lk)cx.setLineDash([5*px,4*px]);cx.beginPath();cx.moveTo(A.x,A.y);cx.lineTo(B.x,B.y);cx.stroke();cx.setLineDash([]);});cx.globalAlpha=1;
@@ -1832,7 +2215,7 @@ cv.addEventListener("pointerdown",e=>{
   if(Math.hypot(R.x-x,R.y-y)<0.5&&!obsMode&&!personMode&&!(ui.screen==="mapTool"&&(ui.mt.tool||ui.mt.adding))){
     if(brakeOn&&ui.screen!=="mapTool"&&!assisting){toast("Quita el freno para empujar el robot.");return;}
     if(nav||ui.follow){toast("El robot está trabajando: no se puede empujar.");return;}
-    if(power==="on"&&S.lockIdle&&!S.assist&&!assisting){toast("Motor bloqueado en reposo (Ajustes → Contraseña y seguridad).");return;}
+    if(power==="on"&&S.lockIdle&&!S.assist&&!assisting){toast("Motor bloqueado en reposo (Configuración → Contraseña y seguridad).");return;}
     if(power==="on"&&estop&&S.lockEstop){toast("Motor bloqueado por la parada de emergencia.");return;}
     drag="robot";cv.setPointerCapture(e.pointerId);
   }
@@ -1857,9 +2240,9 @@ function mapClick(x,y){
   if(personMode||(ui.follow&&ui.follow.state==="search")){if(T(x,y)){toast("Ahí hay algo sólido.");return;}person={x,y};updateHw();return;}
   if(ui.screen!=="mapTool"||estop)return;
   const mt=ui.mt;
-  if(mt.tool==="area"){if(!mt.wallStart)mt.wallStart=[+x.toFixed(2),+y.toFixed(2)];else{mt.draft.vwalls.push([mt.wallStart[0],mt.wallStart[1],+x.toFixed(2),+y.toFixed(2)]);mt.wallStart=null;log("Pared virtual añadida");ev("wallAdded");}renderScreen();}
+  if(mt.tool==="area"){if(!mt.wallStart)mt.wallStart=[+x.toFixed(2),+y.toFixed(2)];else{snap();mt.draft.vwalls.push([mt.wallStart[0],mt.wallStart[1],+x.toFixed(2),+y.toFixed(2)]);mt.wallStart=null;log("Pared virtual añadida");ev("wallAdded");}renderScreen();}
   else if(mt.tool==="route"){let best=null,bd=0.7;mt.draft.points.forEach(p=>{if(p.auto)return;const d=Math.hypot(p.x-x,p.y-y);if(d<bd){bd=d;best=p.id}});if(best)pickPoint(best);}
-  else if(mt.tool==="noise"){const g=mt.draft.grid;let n=0;for(let cy=Math.floor((y-0.4)/CS);cy<=Math.floor((y+0.4)/CS);cy++)for(let cx2=Math.floor((x-0.4)/CS);cx2<=Math.floor((x+0.4)/CS);cx2++){if(cx2<0||cy<0||cx2>=GW||cy>=GH)continue;if(((cx2+.5)*CS-x)**2+((cy+.5)*CS-y)**2>0.16)continue;const i=cy*GW+cx2;if(g[i]===2){g[i]=1;n++;}}if(n)log(`Ruido borrado (${n} celdas)`);}
+  else if(mt.tool==="noise"){snap();const g=mt.draft.grid;let n=0;for(let cy=Math.floor((y-0.4)/CS);cy<=Math.floor((y+0.4)/CS);cy++)for(let cx2=Math.floor((x-0.4)/CS);cx2<=Math.floor((x+0.4)/CS);cx2++){if(cx2<0||cy<0||cx2>=GW||cy>=GH)continue;if(((cx2+.5)*CS-x)**2+((cy+.5)*CS-y)**2>0.16)continue;const i=cy*GW+cx2;if(g[i]===2){g[i]=1;n++;}}if(n)log(`Ruido borrado (${n} celdas)`);}
 }
 
 /* ================= Etiquetas del plano ================= */
@@ -1911,7 +2294,7 @@ const MISSIONS=[
   {t:"Libera la seta pulsándola otra vez.",h:"En el robot real se libera girándola en sentido horario.",ok:()=>seen("estopOff")},
   {t:"Reanuda la tarea tocando la pantalla.",h:"Tras liberar la seta el robot queda en pausa. Si no tocas, reanuda solo a los 10 s.",ok:()=>seen("resumed")}]},
 {id:"bandejas",t:"Varias zonas de carga",g:"Con una estructura de bandejas, cada zona puede ir a un destino distinto en el mismo viaje.",steps:[
-  {t:"Pon 2 zonas de carga en Ajustes → Funciones del robot → Ajustes de bandejas.",h:"«Ajustes» está en la barra inferior de inicio. Cierra Ajustes con «✕ Ajustes» al terminar.",ok:()=>S.trays>=2},
+  {t:"Pon 2 zonas de carga en Configuración → Funciones del robot → Ajustes de bandejas.",h:"«Ajustes» está en la barra inferior de inicio. Se cierra con «✕ Configuración» al terminar.",ok:()=>S.trays>=2},
   {t:"En Entrega, asigna un destino distinto a A1 y a A2 y pulsa «Iniciar».",h:"Al elegir el destino de A1 la selección pasa sola a A2. También puedes cambiar de zona con las pestañas A1/A2.",ok:()=>seen("deliveryStart",d=>d.n>=2)},
   {t:"Completa las dos entregas.",h:"Pulsa «Hecho» en cada destino. El orden lo decide «Prioridad de destino» (por distancia o por orden).",ok:()=>seen("deliveryAll")}]},
 {id:"obstaculo",t:"Obstáculo en el camino",g:"El robot se para ante un obstáculo y, si no se aparta, busca otra ruta del mapa y bloquea el tramo un tiempo.",steps:[
@@ -1920,12 +2303,12 @@ const MISSIONS=[
   {t:"Espera a que replanifique, o quita la caja para que siga.",h:"Replanifica a los 30 s (Ajustes de funcionamiento). Con ×5 son 6 s. Si no hay otra ruta, sigue esperando.",ok:()=>seen("replanned")||seen("boxRemoved")}]},
 {id:"crucero",t:"Ruta de crucero",g:"El crucero repite un recorrido por varios puntos: útil para repartos fijos o rondas.",steps:[
   {t:"Abre «Crucero» y pulsa + para añadir una ruta.",h:"El + está arriba a la derecha de la pantalla del robot.",ok:()=>ui.screen==="cruiseEdit"},
-  {t:"Toca al menos tres puntos en orden, pulsa «Finalizar» y acepta el modo de ruta.",h:"Elige «Crucero por vueltas» si quieres que termine solo.",ok:()=>seen("cruiseSaved",d=>d.n>=3)},
+  {t:"Con «+ Seguir añadiendo», añade al menos tres puntos en orden y pulsa «Completo».",h:"Toca «⤳ Modo de ciclo ›» y elige «Crucero por número» si quieres que termine solo.",ok:()=>seen("cruiseSaved",d=>d.n>=3)},
   {t:"Selecciona tu ruta y pulsa «Iniciar».",h:"La ruta seleccionada tiene el borde azul.",ok:()=>seen("cruiseStart")},
   {t:"En la primera parada, pulsa «Continuar».",h:"También vale el «Botón rápido» del panel Robot. En los ajustes de crucero puedes hacer que no pare o que espere un tiempo.",ok:()=>seen("cruiseAdvance")}]},
 {id:"carga",t:"Recarga y llamada",g:"Manda el robot a cargar y llámalo desde un punto mientras carga, como harías con un pulsador o la app.",steps:[
-  {t:"Activa «Llamable durante la carga» en Ajustes → Funciones del robot → Llamadas.",h:"Sin esta opción, el robot ignora las llamadas mientras carga.",ok:()=>S.callableCharging},
-  {t:"Vuelve a inicio y pulsa «Recarga con un toque». Espera a que empiece a cargar.",h:"Es el icono de la batería en la barra inferior de inicio.",ok:()=>!!job&&job.type==="charging"},
+  {t:"Activa «Llamable durante la carga» en Configuración → Funciones del robot → Función de llamada.",h:"Sin esta opción, el robot ignora las llamadas mientras carga.",ok:()=>S.callableCharging},
+  {t:"Vuelve a inicio y pulsa «Recarga con un toque». Espera a que empiece a cargar.",h:"Está en el menú ⋯ de la pestaña pequeña a la izquierda del robot.",ok:()=>!!job&&job.type==="charging"},
   {t:"Llama al robot: elige un punto en «Llamar desde» y pulsa «Llamar».",h:"Está en el panel Plano. La batería tiene que estar por encima del 20 %.",ok:()=>seen("callStart")},
   {t:"Cuando llegue, pulsa «Hecho».",h:"Si nadie pulsa, la llamada se cierra sola al acabar la cuenta atrás.",ok:()=>seen("callDone")}]},
 {id:"estanteria",t:"Mover una estantería",g:"El modelo WTIDL1 se mete debajo de una estantería, la eleva y la lleva a otro punto.",steps:[
@@ -1939,16 +2322,16 @@ const MISSIONS=[
   {t:"Empújalo de vuelta al punto de arranque y pulsa «Reintentar».",h:"Tiene que quedar a menos de 0,8 m del punto. Al acabar, vuelve a poner el freno.",ok:()=>seen("relocalized")}]},
 {id:"cristal",t:"El cristal que el LiDAR no ve",g:"El LiDAR no detecta superficies transparentes: en el mapa parecen zona libre. Se protegen con paredes virtuales.",steps:[
   {t:"Activa «LiDAR» y «Plano real» en el panel Plano.",h:"El plano real muestra en azul un cristal que el mapa del robot no tiene. La línea roja discontinua es la pared virtual que lo protege.",ok:()=>showRays&&showTruth},
-  {t:"Ve a Ajustes → Ajustes de mapa → «Editar el mapa en uso» y abre «Área».",h:"«Área» está en el menú de la izquierda de la herramienta de mapeo.",ok:()=>ui.screen==="mapTool"&&!!ui.mt&&ui.mt.tool==="area"},
+  {t:"Ve a Configuración → Ajustes de mapa → «Editar mapa», pulsa ✎ en el mapa en uso y abre «☰ Herramientas» → «Área».",h:"El mapa en uso es el que pone «En uso».",ok:()=>ui.screen==="mapTool"&&!!ui.mt&&ui.mt.tool==="area"},
   {t:"Dibuja una pared virtual: toca dónde empieza y dónde termina.",h:"Puedes tocar en el plano grande o en el mapa de la pantalla del robot.",ok:()=>seen("wallAdded")},
-  {t:"Pulsa «Completar» y guarda el mapa.",h:"El robot no planifica caminos que crucen una pared virtual.",ok:()=>seen("mapSaved")}]},
+  {t:"Pulsa «complete» para guardar el mapa.",h:"El robot no planifica caminos que crucen una pared virtual.",ok:()=>seen("mapSaved")}]},
 {id:"mapa",t:"Tu primer mapa",g:"Crea un mapa desde cero: escanea la sala empujando el robot, marca los puntos y guarda.",steps:[
-  {t:"Ve a Ajustes → Ajustes de mapa y pulsa «+ Nuevo mapa».",h:"Empieza con el robot en reposo.",ok:()=>ui.screen==="mapTool"&&!!ui.mt&&!ui.mt.draft.id},
-  {t:"Empuja el robot hasta escanear al menos 150 m².",h:"Usa las flechas de la pantalla, las del teclado o arrastra el robot por el plano. Los metros escaneados salen arriba.",ok:()=>!!ui.mt&&ui.screen==="mapTool"&&exploredArea(ui.mt.draft.grid)>=150},
-  {t:"Añade un «Punto de arranque» donde vaya a encenderse el robot.",h:"Pulsa «+ Añadir punto», elige el tipo en la lista de la derecha y confirma con «Configuración completada».",ok:()=>draftHas(p=>p.type==="boot")},
-  {t:"Lleva el robot a otros sitios y añade al menos dos destinos.",h:"Cada punto se crea donde está el robot. La ruta entre puntos se graba sola mientras lo empujas.",ok:()=>!!ui.mt&&ui.screen==="mapTool"&&ui.mt.draft.points.filter(isDest).length>=2},
-  {t:"Pulsa «Terminar escaneo», luego «Completar», y guarda el mapa.",h:"Abajo a la derecha se comprueba que hay punto de arranque y que la ruta une todos los puntos.",ok:()=>seen("mapSaved")},
-  {t:"Haz una entrega en tu mapa nuevo.",h:"Sal de Ajustes, entra en Entrega y elige uno de tus destinos.",ok:()=>seen("deliveryStart")}]}
+  {t:"Ve a Configuración → Ajustes de mapa → «Editar mapa» y pulsa «Añadir». Sigue el asistente: tipo, nombre, método y precauciones.",h:"Con «VSLAM+ láser» se empuja libremente; con «Trazado de láser» hay que dar una vuelta cerrada.",ok:()=>ui.screen==="mapTool"&&!!ui.mt&&!ui.mt.draft.id},
+  {t:"Empuja el robot despacio hasta escanear al menos 150 m².",h:"Usa las flechas de la pantalla, las del teclado o arrastra el robot por el plano. Los metros escaneados salen en el aviso rojo.",ok:()=>!!ui.mt&&ui.screen==="mapTool"&&exploredArea(ui.mt.draft.grid)>=150},
+  {t:"Comprueba que existe el punto de arranque.",h:"Al empezar se crea solo «Ubicación de inicio 0» donde estaba el robot. Si lo quieres en otro sitio, usa «+ Añadir punto» → Punto de arranque.",ok:()=>draftHas(p=>p.type==="boot")},
+  {t:"Lleva el robot a otros sitios y añade al menos dos destinos.",h:"Pulsa «Añadir destino» (o «+ Añadir punto»): el punto se crea donde está el robot. La ruta se graba sola mientras lo empujas.",ok:()=>!!ui.mt&&ui.screen==="mapTool"&&ui.mt.draft.points.filter(isDest).length>=2},
+  {t:"Pulsa «Finalizar mapeo» y después «complete» para guardar.",h:"Arriba a la derecha se comprueba que hay punto de arranque y que la ruta une todos los puntos.",ok:()=>seen("mapSaved")},
+  {t:"Haz una entrega en tu mapa nuevo.",h:"Sal de Configuración, entra en Entrega y elige uno de tus destinos.",ok:()=>seen("deliveryStart")}]}
 ];
 function setMission(i){MS.cur=i;MS.step=0;MS.since=evSeq;MS.tip=false;renderMission();saveState();}
 function missionTick(){
@@ -1991,7 +2374,7 @@ function cleanMap(o){
   const edges=o.edges.filter(e=>Array.isArray(e)&&ids.has(e[0])&&ids.has(e[1])&&e[0]!==e[1]).map(e=>[e[0],e[1]]);
   const vwalls=(Array.isArray(o.vwalls)?o.vwalls:[]).filter(w=>Array.isArray(w)&&w.length===4&&w.every(v=>typeof v==="number"&&isFinite(v))).map(w=>[...w]);
   const cruises=(Array.isArray(o.cruises)?o.cruises:[]).filter(c=>c&&IDRE.test(c.id)&&Array.isArray(c.pts)&&["loop","time","count"].includes(c.type)).map(c=>({id:c.id,name:String(c.name||"Ruta").slice(0,40),type:c.type,val:clamp(+c.val||1,1,600),pts:c.pts.filter(id=>ids.has(id))}));
-  return {id:IDRE.test(o.id)?o.id:"m"+Date.now(),name:String(o.name||"Mapa").slice(0,40),grid,points,edges,vwalls,cruises,dock:ids.has(o.dock)?o.dock:null};
+  return {id:IDRE.test(o.id)?o.id:"m"+Date.now(),name:String(o.name||"Mapa").slice(0,40),world:o.world==="aula"?"aula":"taller",grid,points,edges,vwalls,cruises,dock:ids.has(o.dock)?o.dock:null};
 }
 function saveNote(bad){const n=document.getElementById("saveNote");n.classList.toggle("bad",!!bad);n.textContent=bad?"Este navegador no deja guardar: los cambios se perderán al cerrar la página.":"Mapas, ajustes y progreso se guardan solos en este navegador.";}
 function saveState(){
@@ -2009,12 +2392,13 @@ function loadState(){
         else if(typeof v===typeof S[k]&&(typeof v!=="number"||isFinite(v)))S[k]=v;});
       S.steady=0;
       const ms=(Array.isArray(d.maps)?d.maps:[]).map(cleanMap).filter(Boolean);
-      if(ms.length){maps.length=0;ms.forEach(m=>{if(!maps.some(x=>x.id===m.id))maps.push(m);});curMapId=maps.some(m=>m.id===d.curMapId)?d.curMapId:maps[0].id;}
+      if(ms.length){maps.length=0;ms.forEach(m=>{if(!maps.some(x=>x.id===m.id))maps.push(m);});if(!maps.some(m=>m.id===AULA_DATA.id))maps.push(makeAula());curMapId=maps.some(m=>m.id===d.curMapId)?d.curMapId:maps[0].id;}
       if(Array.isArray(d.favs))ui.favs=d.favs.filter(f=>f&&typeof f.from==="string"&&typeof f.to==="string").map(f=>({from:f.from,to:f.to})).slice(0,20);
       if(typeof d.goTo==="string"&&IDRE.test(d.goTo))ui.goTo=d.goTo;
       if(d.ms&&typeof d.ms==="object"){if(Number.isInteger(d.ms.cur)&&d.ms.cur>=-1&&d.ms.cur<MISSIONS.length)MS.cur=d.ms.cur;MISSIONS.forEach(m=>{if(d.ms.done&&d.ms.done[m.id])MS.done[m.id]=true;});}
     }catch(e){}
   }
+  setWorld(curMap().world);
   const w=dockPt(curMap());
   if(w){R.x=w.x;R.y=w.y;R.node=w.id;localized=true;}else{R.node=null;localized=false;}
   if(!ptById(curMap(),ui.goTo))ui.goTo=w?w.id:null;
@@ -2035,7 +2419,7 @@ impFile.addEventListener("change",()=>{
     impFile.value="";
     if(!m){log("No se pudo importar: el archivo no es un mapa de este simulador","e");toast("Ese archivo no es un mapa de este simulador.");return;}
     m.id="m"+Date.now();let nm=m.name,k=2;while(maps.some(x=>x.name===nm))nm=`${m.name} (${k++})`;m.name=nm;maps.push(m);saveState();
-    log(`Mapa «${m.name}» importado. Actívalo en Ajustes → Ajustes de mapa → Usar`);toast(`Mapa «${m.name}» importado. Actívalo en Ajustes → Ajustes de mapa.`);
+    log(`Mapa «${m.name}» importado. Actívalo en Configuración → Ajustes de mapa → Usar`);toast(`Mapa «${m.name}» importado. Actívalo en Configuración → Ajustes de mapa.`);
     if(ui.screen==="settings")renderScreen();
   };
   rd.readAsText(f);
@@ -2053,7 +2437,7 @@ let last=performance.now();
 function frame(now){
   const dt=Math.min(0.1,(now-last)/1000)*simSpeed;last=now;
   const n=Math.max(1,Math.ceil(dt/0.02));for(let i=0;i<n;i++)tick(dt/n);
-  if(power==="on"&&ui.screen==="mapTool")rays=scanRobot(ui.mt.stage==="scan"&&!ui.mt.adding?ui.mt.draft.grid:null,true);
+  if(power==="on"&&ui.screen==="mapTool")rays=scanRobot(mtScanning()?ui.mt.draft.grid:null,true);
   else rays=showRays&&power==="on"?scanRobot(null,true):[];
   draw();drawMini();updateLive();updateHw();missionTick();musicTick(now);
   requestAnimationFrame(frame);
